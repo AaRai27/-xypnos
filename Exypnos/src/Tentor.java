@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.util.*;
 /**
  *
  * @author ASUS
  */
-import java.util.*;
+
 public class Tentor extends Orang{
     private List<Kelas> listKelas;
     private String idTentor;
     private String namaTentor;
-    private
-    
+//    private
 }
