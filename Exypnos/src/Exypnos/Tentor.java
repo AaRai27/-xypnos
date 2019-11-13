@@ -16,11 +16,12 @@ public class Tentor extends Orang{
     private String idTentor;
     private String namaTentor;
     private Kelas kelas;
+    private static int sid = 1;
 
-    public Tentor(String idTentor, String namaTentor, Kelas kelas) {
-        this.idTentor = idTentor;
+    public Tentor(String namaTentor) {
         this.namaTentor = namaTentor;
-        this.kelas = kelas;
+        setIdTentor("T-"+sid);
+        sid++;
         listKelas = new ArrayList<>();
     }
     
@@ -49,8 +50,8 @@ public class Tentor extends Orang{
     public void setNamaTentor(String namaTentor) {
         this.namaTentor = namaTentor;
     }
-    
-    
-    
+    public int getListKelasSize(){
+        return listKelas.size();
+    }
     
 }
