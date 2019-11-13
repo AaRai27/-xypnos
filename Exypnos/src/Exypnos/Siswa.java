@@ -56,7 +56,6 @@ public class Siswa extends Orang{
     public void setTahunMasuk(int tahunMasuk) {
         this.tahunMasuk = tahunMasuk;
     }
-    
-    
+        
     
 }

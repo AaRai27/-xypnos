@@ -13,16 +13,31 @@ import java.util.*;
  */
 public class Aplikasi {
     
-     public String searchSiswa(String id,List<Siswa> daftarSiswa) {
+     static Siswa searchSiswa(String id,List<Siswa> daftarSiswa) {
         int i =0;
-        while(daftarSiswa.get(i).getIdSiswa() != id){
-            i++;
+        while(i<daftarSiswa.size()){
+            if(!daftarSiswa.get(i).getIdSiswa().equals(id)){
+                i++;
+            }else{
+               return daftarSiswa.get(i); 
+            }
         }
-        return id;
+            return null;
     }
+     
+     static void tampilkanSearchSiswa(String id, List<Siswa> daftarSiswa){
+        if (searchSiswa(id, daftarSiswa) == null) {
+             System.out.println("data tidak ditemukan");
+         }else{
+        System.out.println("Nama : " + searchSiswa(id, daftarSiswa).getNamaSiswa());
+        System.out.println("Jurusan : " + searchSiswa(id, daftarSiswa).getJurusan());
+        System.out.println("Tahun Masuk : " + searchSiswa(id, daftarSiswa).getTahunMasuk());
+         }
+     }
     
     
     public static void main(String[] args) {
+        Aplikasi bantuan = new Aplikasi();
         Scanner pilihan = new Scanner(System.in);
         List<Siswa> daftarSiswa = new ArrayList<>();
         List<Tentor> daftarTentor = new ArrayList<>();
@@ -37,42 +52,48 @@ public class Aplikasi {
             switch (input) {
                 case 1: {
                     System.out.print("Masukkan nama siswa : ");
-                    String Nama = pilihan.next();
+                    String Nama = "boy";
                     System.out.print("Masukkan Jurusan siswa : ");
-                    String jurusan = pilihan.next();
+                    String jurusan = "ips";
                     System.out.print("Masukkan Tahun Masuk siswa : ");
-                    int tahunMasuk = pilihan.nextInt();
+                    int tahunMasuk = 2019;
                     Siswa s1 = new Siswa(Nama, jurusan, tahunMasuk);
                     daftarSiswa.add(s1);
+                    
+//                    System.out.print("Masukkan nama siswa : ");
+                    Nama = "neng";
+//                    System.out.print("Masukkan Jurusan siswa : ");
+                    jurusan = "ips";
+//                    System.out.print("Masukkan Tahun Masuk siswa : ");
+//                    tahunMasuk = 2019;
+                    Siswa s2 = new Siswa(Nama, jurusan, tahunMasuk);
+                    daftarSiswa.add(s2);
+                    
+//                    System.out.print("Masukkan nama siswa : ");
+                    Nama = "gan";
+//                    System.out.print("Masukkan Jurusan siswa : ");
+                     jurusan = "ipa";
+//                    System.out.print("Masukkan Tahun Masuk siswa : ");
+                     tahunMasuk = 2019;
+                    Siswa s3 = new Siswa(Nama, jurusan, tahunMasuk);
+                    daftarSiswa.add(s3);
+                    
 //                System.out.println("Berhasil id: "+s1.getIdSiswa());
                     System.out.println();
+                    
+                    
                 }
             }            
         }
         for (int i = 0; i < daftarSiswa.size(); i++) {
             System.out.println(i + 1 + ". " + daftarSiswa.get(i).getNamaSiswa());
         }
-        
+        System.out.println();
         System.out.print("Masukan ID yang dicari : ");
         String id = pilihan.next();
-        String cari = searchSiswa(id, daftarSiswa);
-        System.out.println();
+        tampilkanSearchSiswa(id, daftarSiswa);
         
-    
 
-//        Siswa s1 = new Siswa("1301184", "Jokodok", "Teknik_pencitraan", 1647);
-//        Siswa s2 = new Siswa("1301234", "Praproro", "Teknik_uang", 1947);
-//        Siswa s3 = new Siswa("1301432", "Moeldoko", "Teknik_aniyaya", 2647);
-//        MataPelajaran m1 = new MataPelajaran("kalkulus", 5, 68);
-//        MataPelajaran m2 = new MataPelajaran("Probstats", 7, 56);
-//        Kelas k1 = new Kelas("IF-42-04", m1);
-//        Kelas k2 = new Kelas("IF-42-03", m2);
-//        k1.addSiswa(s1);
-//        k1.addSiswa(s2);
-//        k2.addSiswa(s3);
-//        k1.createMateri("Limit", 3);
-//        System.out.println(k1.getSiswa(1).getNamaSiswa());
-//        System.out.println(k1.getSiswa(1).getJurusan());   
     }
     
    
