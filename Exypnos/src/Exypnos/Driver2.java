@@ -56,6 +56,7 @@ public class Driver2 {
                 case 3 :
                     MataPelajaran m1 = new MataPelajaran("Kalkulus",3, 95);
                     MataPelajaran m2 = new MataPelajaran("Pisika",69, 75);
+    
                     bantuan.inputKelasToTentor("T-1", m1, "CC10628");
                     bantuan.inputKelasToTentor("T-1", m2, "CD01232");
                     for (int i = 0; i < bantuan.daftarTentor.size(); i++) {
@@ -63,6 +64,7 @@ public class Driver2 {
                         System.out.println(bantuan.daftarTentor.get(i).getNamaTentor());
                         for (int j = i; j < bantuan.daftarTentor.get(i).getListKelasSize(); j++) {
                             System.out.println(bantuan.daftarTentor.get(i).getKelas(j).getNamaKelas());
+                            System.out.println(bantuan.daftarTentor.get(i).getKelas(j).);
                         }
                     }
             }
