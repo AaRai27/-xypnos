@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 package Exypnos;
+
 import java.util.*;
+
 /**
  *
  * @author Afif Raihan
  */
 public class Driver2 {
+
     public static void main(String[] args) {
         Aplikasi bantuan = new Aplikasi();
         Scanner pilihan = new Scanner(System.in);
@@ -19,33 +22,44 @@ public class Driver2 {
             System.out.println("Pilihan Menu:");
             System.out.println("1. Create Siswa");
             System.out.println("2. Create Tentor");
+            System.out.println("3. Create Mata Pelajaran ");
+            System.out.println("4. Create Kelas ");
+            System.out.println("5. Masukkan Siswa ke Kelas");
+            System.out.println("6. Masukkan Materi ke Kelas");
+            System.out.println("7. Tampilkan Tentor");
+            System.out.println("8. Tampilkan  data Seluruh Siswa");
+            System.out.println("9. Tampilkan  data Seluruh Mata Pelajaran");
+            System.out.println("10. Tampilkan  data Seluruh Kelas");
+            System.out.println("11. Tampilkan  data Lengkap Kelas-Siswa-Tentor");
+            System.out.println("12. Tampilkan  data Lengkap Kelas yang diajar seorang tentor");
+            System.out.println("13. Tampilkan  data Lengkap Kelas dan tentornya");
+            System.out.println("14. Tampilkan  data Kelas Yang Siswa Pilih");
+            System.out.println("15. Delete MataPelajaran");
             System.out.print("Pilihan Anda : ");
             input = pilihan.nextInt();
+
             switch (input) {
                 case 1:
                     String Nama = "boy";
                     String jurusan = "ips";
                     int tahunMasuk = 2019;
-                    Siswa s1 = new Siswa(Nama, jurusan, tahunMasuk);
-                    bantuan.daftarSiswa.add(s1);
+                    bantuan.inputSiswa(Nama, jurusan, tahunMasuk);
 
                     Nama = "neng";
                     jurusan = "ips";
                     tahunMasuk = 2018;
-                    Siswa s2 = new Siswa(Nama, jurusan, tahunMasuk);
-                    bantuan.daftarSiswa.add(s2);
+                    bantuan.inputSiswa(Nama, jurusan, tahunMasuk);
 
                     Nama = "gan";
                     jurusan = "ipa";
                     tahunMasuk = 2019;
-                    Siswa s3 = new Siswa(Nama, jurusan, tahunMasuk);
-                    bantuan.daftarSiswa.add(s3);
+                    bantuan.inputSiswa(Nama, jurusan, tahunMasuk);
 
                     Nama = "cak";
                     jurusan = "ips";
                     tahunMasuk = 2000;
-                    Siswa s4 = new Siswa(Nama, jurusan, tahunMasuk);
-                    bantuan.daftarSiswa.add(s4);
+                    bantuan.inputSiswa(Nama, jurusan, tahunMasuk);
+
                     break;
                 case 2:
                     String nama = "Andi";
@@ -53,35 +67,181 @@ public class Driver2 {
                     nama = "Ani";
                     bantuan.inputTentor(nama);
                     break;
-                case 3 :
-                    MataPelajaran m1 = new MataPelajaran("Kalkulus",3, 95);
-                    MataPelajaran m2 = new MataPelajaran("Pisika",69, 75);
-    
-                    bantuan.inputKelasToTentor("T-1", m1, "CC10628");
-                    bantuan.inputKelasToTentor("T-1", m2, "CD01232");
-                    for (int i = 0; i < bantuan.daftarTentor.size(); i++) {
-                        System.out.println(bantuan.daftarTentor.get(i).getIdTentor());
-                        System.out.println(bantuan.daftarTentor.get(i).getNamaTentor());
-                        for (int j = i; j < bantuan.daftarTentor.get(i).getListKelasSize(); j++) {
-                            System.out.println(bantuan.daftarTentor.get(i).getKelas(j).getNamaKelas());
-                            System.out.println(bantuan.daftarTentor.get(i).getKelas(j).);
-                        }
+                case 3:
+                    String Mapel = "Kalkulus";
+                    int bab = 3;
+                    int kkm = 95;
+                    bantuan.inputMapel(Mapel, bab, kkm);
+                    Mapel = "Fisika";
+                    bab = 69;
+                    kkm = 75;
+                    bantuan.inputMapel(Mapel, bab, kkm);
+                    Mapel = "Fisika";
+                    bab = 69;
+                    kkm = 75;
+                    bantuan.inputMapel(Mapel, bab, kkm);
+                    break;
+                case 4:
+                    String IdTentor = "T-1";
+                    String mapel = "Kalkulus";
+                    Tentor t1 = bantuan.searchTentor(IdTentor);
+                    MataPelajaran m1 = bantuan.searchMapel(mapel);
+                    bantuan.inputKelasToTentor(t1, m1, "K0001");
+
+                    IdTentor = "T-1";
+                    mapel = "Fisika";
+                    t1 = bantuan.searchTentor(IdTentor);
+                    m1 = bantuan.searchMapel(mapel);
+                    bantuan.inputKelasToTentor(t1, m1, "F0001");
+                            
+
+                    IdTentor = "T-2";
+                    mapel = "Fisika";
+                    t1 = bantuan.searchTentor(IdTentor);
+                    m1 = bantuan.searchMapel(mapel);
+                    bantuan.inputKelasToTentor(t1, m1, "F0002");
+                    
+                    break;
+                case 5:
+                    String idSiswa = "S-1";
+                    String kelasSiswa = "K0001";
+                    Siswa s2 = bantuan.searchSiswa(idSiswa);
+                    Kelas k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2 != null) {
+                        bantuan.inputSiswaToKelas(s2, k2);
                     }
+
+                    idSiswa = "S-2";
+                    kelasSiswa = "K0001";
+                    s2 = bantuan.searchSiswa(idSiswa);
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2 != null) {
+                        bantuan.inputSiswaToKelas(s2, k2);
+                    }
+
+                    idSiswa = "S-2";
+                    kelasSiswa = "K0001";
+                    s2 = bantuan.searchSiswa(idSiswa);
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2 != null) {
+                        bantuan.inputSiswaToKelas(s2, k2);
+                    }
+                    
+                    idSiswa = "S-2";
+                    kelasSiswa = "F0002";
+                    s2 = bantuan.searchSiswa(idSiswa);
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2 != null) {
+                        bantuan.inputSiswaToKelas(s2, k2);
+                    }
+
+                    idSiswa = "S-3";
+                    kelasSiswa = "F0001";
+                    s2 = bantuan.searchSiswa(idSiswa);
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2 != null) {
+                        bantuan.inputSiswaToKelas(s2, k2);
+                    }
+
+                    idSiswa = "S-4";
+                    kelasSiswa = "F0002";
+                    s2 = bantuan.searchSiswa(idSiswa);
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2 != null) {
+                        bantuan.inputSiswaToKelas(s2, k2);
+                    }
+                    break;
+                case 6:
+                    String materi = "Integral Lipat";
+                    int jmlBahasan = 2;
+                    kelasSiswa = "F0002";
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2!=null){
+                        bantuan.inputMateriToKelas(k2, materi, jmlBahasan);
+                    }
+                    
+                    materi = "Turunan";
+                    jmlBahasan = 4;
+                    kelasSiswa = "K0001";
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2!=null){
+                        bantuan.inputMateriToKelas(k2, materi, jmlBahasan);
+                    }
+                    materi = "Turunan";
+                    jmlBahasan = 4;
+                    kelasSiswa = "K0001";
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2!=null){
+                        bantuan.inputMateriToKelas(k2, materi, jmlBahasan);
+                    }
+                    materi = "GLBB";
+                    jmlBahasan = 5;
+                    kelasSiswa = "F0001";
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2!=null){
+                        bantuan.inputMateriToKelas(k2, materi, jmlBahasan);
+                    }
+                    
+                    materi = "GLB";
+                    jmlBahasan = 3;
+                    kelasSiswa = "F0001";
+                    k2 = bantuan.searchKelas(kelasSiswa);
+                    if (k2!=null){
+                        bantuan.inputMateriToKelas(k2, materi, jmlBahasan);
+                    }
+                    break;
+                case 7:
+                    for (int i = 0; i < bantuan.getDaftarTentorSize(); i++) {
+                        bantuan.tampilkanSearchTentor(bantuan.gettentor(i).getIdTentor());
+                    }
+                    break;
+                case 8:
+                    for (int i = 0; i < bantuan.getDaftarSiswaSize(); i++) {
+                        bantuan.tampilkanSearchSiswa(bantuan.getSiswa(i).getIdSiswa());
+                    }
+                    break;
+                case 9:
+                    for (int i = 0; i < bantuan.getDaftarMapelSize(); i++) {
+                        bantuan.tampilkanSearchMapel(bantuan.getMapel(i).getNamaMapel());
+                    }
+                    break;
+                case 10:
+                    for (int i = 0; i < bantuan.getDaftarKelasSize(); i++) {
+                        bantuan.tampilkanSearchKelas(bantuan.getKelas(i).getNamaKelas());
+                    }
+                    break;
+                case 11:
+                    for (int i = 0; i < bantuan.getDaftarTentorSize(); i++) {
+                        bantuan.tampilkanSearchTentorFull(bantuan.gettentor(i).getIdTentor());
+                    }
+                case 12 :
+                        String cariTentor = "T-1";
+                        if (bantuan.searchTentor(cariTentor) != null){
+                           bantuan.tampilkanSearchTentorFull(bantuan.searchTentor(cariTentor).getIdTentor()); 
+                        } else {
+                            System.out.println("Tentor tidak ditemukan");
+                        }
+                        break;
+                case 13 :
+                    for (int i = 0; i < bantuan.getDaftarTentorSize(); i++) {
+                        bantuan.tampilkanSearchKelasdanTentor(bantuan.gettentor(i).getIdTentor());
+                    }
+                case 14 :
+                    String id_Siswa = "S-2";
+                    bantuan.tampilkanSearchKelasMilikSiswa(id_Siswa);
+                    
+                case 15 :
+                    String namaMapel = "Fisika";
+                    bantuan.deleteMataPelajaran(namaMapel);
+                case 16 :
+                    String namaMapelLama = "Fisikafff";
+                    String namaMapelBaru = "Automata";
+                    int jmlBabBaru = 6;
+                    int kkmBaru = 60;
+                    bantuan.updateMataPelajaran(namaMapelLama, namaMapelBaru, jmlBabBaru, kkmBaru);
+
             }
         }
-
-        
-//        System.out.println();
-//        System.out.print("Masukan ID yang dicari : ");
-//        String id = pilihan.next();
-//        bantuan.tampilkanSearchSiswa(id, bantuan.daftarSiswa);
-//        for (int i = 0; i < bantuan.daftarSiswa.size(); i++) {
-//            System.out.println(i + 1 + ".ID Siswa: \t" + bantuan.daftarSiswa.get(i).getIdSiswa());
-//            System.out.println("Nama \t\t: "+bantuan.daftarSiswa.get(i).getNamaSiswa());
-//            System.out.println("Juusan \t: "+bantuan.daftarSiswa.get(i).getJurusan());
-//            System.out.println("Tahun Masuk \t: "+bantuan.daftarSiswa.get(i).getTahunMasuk());
-//            System.out.println("======================================================");
-//        }
 
     }
 }

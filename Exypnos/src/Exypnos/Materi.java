@@ -5,12 +5,12 @@ package Exypnos;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ASUS
  */
 public class Materi {
+
     private String namaMateri;
     private int jmlBahasan;
 
@@ -35,8 +35,4 @@ public class Materi {
         this.jmlBahasan = jmlBahasan;
     }
 
-    
-    
-    
-            
 }

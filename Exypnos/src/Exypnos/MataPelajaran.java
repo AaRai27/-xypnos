@@ -5,12 +5,12 @@ package Exypnos;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ASUS
  */
 public class MataPelajaran {
+
     private String namaMapel;
     private int jmlBab;
     private int KKM;
@@ -19,6 +19,7 @@ public class MataPelajaran {
         setNamaMapel(namaMapel);
         this.jmlBab = jmlBab;
         this.KKM = KKM;
+
     }
 
     public String getNamaMapel() {
@@ -44,5 +45,5 @@ public class MataPelajaran {
     public void setKKM(int KKM) {
         this.KKM = KKM;
     }
-    
+
 }
