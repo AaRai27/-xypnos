@@ -5,40 +5,30 @@ package Exypnos;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ASUS
  */
-public class Siswa extends Orang{
-    private String idSiswa;
-    private String namaSiswa;
+public class Siswa extends Orang {
+
+
     private String jurusan;
     private int tahunMasuk;
     private static int sid = 1;
 
     public Siswa(String namaSiswa, String jurusan, int tahunMasuk) {
-        setIdSiswa("S-"+sid);
+        super(namaSiswa,"S-" + sid);
         sid++;
-        setNamaSiswa(namaSiswa);
         setJurusan(jurusan);
         setTahunMasuk(tahunMasuk);
     }
 
     public String getIdSiswa() {
-        return idSiswa;
-    }
-
-    public void setIdSiswa(String idSiswa) {
-        this.idSiswa = idSiswa;
+        return super.getId();
     }
 
     public String getNamaSiswa() {
-        return namaSiswa;
-    }
-
-    public void setNamaSiswa(String namaSiswa) {
-        this.namaSiswa = namaSiswa;
+        return super.getNama();
     }
 
     public String getJurusan() {
@@ -56,6 +46,5 @@ public class Siswa extends Orang{
     public void setTahunMasuk(int tahunMasuk) {
         this.tahunMasuk = tahunMasuk;
     }
-        
-    
+
 }
