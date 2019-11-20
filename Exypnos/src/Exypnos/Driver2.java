@@ -19,6 +19,7 @@ public class Driver2 {
 
         int input = 1;
         while (input != 0) {
+            System.out.println();
             System.out.println("Pilihan Menu:");
             System.out.println("1. Create Siswa");
             System.out.println("2. Create Tentor");
@@ -35,8 +36,11 @@ public class Driver2 {
             System.out.println("13. Tampilkan  data Lengkap Kelas dan tentornya");
             System.out.println("14. Tampilkan  data Kelas Yang Siswa Pilih");
             System.out.println("15. Delete MataPelajaran");
+            System.out.println("16. Update MataPelajaran");
+            System.out.println("17. Delete Kelas");
             System.out.print("Pilihan Anda : ");
             input = pilihan.nextInt();
+            System.out.println();
 
             switch (input) {
                 case 1:
@@ -59,7 +63,6 @@ public class Driver2 {
                     jurusan = "ips";
                     tahunMasuk = 2000;
                     bantuan.inputSiswa(Nama, jurusan, tahunMasuk);
-
                     break;
                 case 2:
                     String nama = "Andi";
@@ -214,6 +217,7 @@ public class Driver2 {
                     for (int i = 0; i < bantuan.getDaftarTentorSize(); i++) {
                         bantuan.tampilkanSearchTentorFull(bantuan.gettentor(i).getIdTentor());
                     }
+                    break;
                 case 12 :
                         String cariTentor = "T-1";
                         if (bantuan.searchTentor(cariTentor) != null){
@@ -226,20 +230,26 @@ public class Driver2 {
                     for (int i = 0; i < bantuan.getDaftarTentorSize(); i++) {
                         bantuan.tampilkanSearchKelasdanTentor(bantuan.gettentor(i).getIdTentor());
                     }
+                    break;
                 case 14 :
                     String id_Siswa = "S-2";
                     bantuan.tampilkanSearchKelasMilikSiswa(id_Siswa);
-                    
+                    break;
                 case 15 :
                     String namaMapel = "Fisika";
                     bantuan.deleteMataPelajaran(namaMapel);
+                    break;
                 case 16 :
                     String namaMapelLama = "Fisikafff";
                     String namaMapelBaru = "Automata";
                     int jmlBabBaru = 6;
                     int kkmBaru = 60;
                     bantuan.updateMataPelajaran(namaMapelLama, namaMapelBaru, jmlBabBaru, kkmBaru);
-
+                    break;
+                case 17 :
+                    String namaKelas = "F0002";
+                    bantuan.deleteKelas(namaKelas);
+                    break;
             }
         }
 

@@ -67,8 +67,7 @@ public class Aplikasi {
         }
         return null;
     }
-    
-    
+
 // method view
     public void tampilkanSearchSiswa(String id) {
         if (searchSiswa(id) == null) {
@@ -93,7 +92,7 @@ public class Aplikasi {
         }
 
     }
-    
+
     public void tampilkanSearchMapel(String mapel) {
         if (searchMapel(mapel) == null) {
             System.out.println("data  Mata Pelajaran tidak ditemukan");
@@ -115,7 +114,7 @@ public class Aplikasi {
             System.out.println("=============================================");
         }
     }
-    
+
     public void tampilkanSearchTentorFull(String id) {
         Tentor t1 = searchTentor(id);
         if (t1 == null) {
@@ -128,7 +127,7 @@ public class Aplikasi {
         }
 
     }
-    
+
     public void tampilkanSearchKelasFull(String kelas) {
         if (searchKelas(kelas) == null) {
             System.out.println("data Kelas tidak ditemukan");
@@ -136,14 +135,14 @@ public class Aplikasi {
             tampilkanSearchKelas(kelas);
             System.out.println("Materi\t\t: ");
             for (int i = 0; i < searchKelas(kelas).getListMateriSize(); i++) {
-                System.out.println("Nama Materi\t:"+searchKelas(kelas).getMateri(i).getNamaMateri());
-                System.out.println("Jumlah Bahasan\t:"+searchKelas(kelas).getMateri(i).getJmlBahasan());
+                System.out.println("Nama Materi\t:" + searchKelas(kelas).getMateri(i).getNamaMateri());
+                System.out.println("Jumlah Bahasan\t:" + searchKelas(kelas).getMateri(i).getJmlBahasan());
             }
-            System.out.println("Nama Siswa Pada Kelas "+kelas+" : ");
+            System.out.println("Nama Siswa Pada Kelas " + kelas + " : ");
             for (int i = 0; i < searchKelas(kelas).getListSiswaSize(); i++) {
                 tampilkanSearchSiswa(searchKelas(kelas).getSiswa(i).getIdSiswa());
             }
-            
+
         }
     }
 
@@ -159,23 +158,23 @@ public class Aplikasi {
         }
 
     }
-    
-    public void tampilkanSearchKelasMilikSiswa(String id){
+
+    public void tampilkanSearchKelasMilikSiswa(String id) {
         Siswa s1 = searchSiswa(id);
         boolean cek = false;
         System.out.println(daftarKelas.size());
-        if (s1 != null){
+        if (s1 != null) {
             for (int i = 0; i < daftarKelas.size(); i++) {
-                if (daftarKelas.get(i).searchSiswa(id) != null){
+                if (daftarKelas.get(i).searchSiswa(id) != null) {
                     cek = true;
                     tampilkanSearchKelas(daftarKelas.get(i).getNamaKelas());
                     for (int j = 0; j < daftarKelas.get(i).getListMateriSize(); j++) {
-                        System.out.println("Nama materi :"+ daftarKelas.get(i).getMateri(j).getNamaMateri());
-                        System.out.println("Jumlah Bahasan :"+ daftarKelas.get(i).getMateri(j).getJmlBahasan());
+                        System.out.println("Nama materi :" + daftarKelas.get(i).getMateri(j).getNamaMateri());
+                        System.out.println("Jumlah Bahasan :" + daftarKelas.get(i).getMateri(j).getJmlBahasan());
                     }
                 }
             }
-            if (cek == false){
+            if (cek == false) {
                 System.out.println("Siswa belum terdaftar dikelas manapun");
             }
         } else {
@@ -183,6 +182,7 @@ public class Aplikasi {
         }
     }
 // method input
+
     public void inputTentor(String namaTentor) {
         Tentor t1 = new Tentor(namaTentor);
         daftarTentor.add(t1);
@@ -207,7 +207,7 @@ public class Aplikasi {
         Tentor t1 = searchTentor(tentor.getIdTentor());
         MataPelajaran m1 = searchMapel(mapel.getNamaMapel());
         Kelas k1 = searchKelas(namaKelas);
-        if (t1 != null && k1 == null && m1 != null)  {
+        if (t1 != null && k1 == null && m1 != null) {
             t1.createKelas(mapel, namaKelas);
             Kelas k2 = new Kelas(mapel, namaKelas);
             daftarKelas.add(k2);
@@ -222,19 +222,17 @@ public class Aplikasi {
         } else {
             System.out.println("Siswa sudah diinput");
         }
-
     }
-    
-    public void inputMateriToKelas(Kelas kelas, String namaMateri, int jumlahBahasan){
-        if (kelas.searchMateri(namaMateri) == null){
+
+    public void inputMateriToKelas(Kelas kelas, String namaMateri, int jumlahBahasan) {
+        if (kelas.searchMateri(namaMateri) == null) {
             kelas.createMateri(namaMateri, jumlahBahasan);
         } else {
             System.out.println("Materi sudah dimasukkan ke Kelas");
         }
-        
+
     }
-    
-    
+
 // method getSize
     public int getDaftarSiswaSize() {
         return daftarSiswa.size();
@@ -251,8 +249,7 @@ public class Aplikasi {
     public int getDaftarKelasSize() {
         return daftarKelas.size();
     }
-    
-    
+
 // method getobject dari list di aplikasi
     public Siswa getSiswa(int i) {
         return daftarSiswa.get(i);
@@ -269,30 +266,53 @@ public class Aplikasi {
     public Kelas getKelas(int i) {
         return daftarKelas.get(i);
     }
-    
+
 // Method Hapus-Hapusan    
-    
-    public void deleteMataPelajaran(String namaMapel){
+    public void deleteMataPelajaran(String namaMapel) {
         MataPelajaran m1 = searchMapel(namaMapel);
-        if(m1 != null){
+        if (m1 != null) {
             daftarMapel.remove(m1);
             for (int i = 0; i < daftarKelas.size(); i++) {
-                if(daftarKelas.get(i).getMapel() == m1){
+                if (daftarKelas.get(i).getMapel() == m1) {
                     MataPelajaran m2 = new MataPelajaran("KOSONG", 0, 0);
                     daftarKelas.get(i).addMapel(m2);
                 }
             }
             System.out.println("Delete MataPelajaran Berhasil");
-        } else{
+        } else {
             System.out.println("MataPelajaran Tidak Ditemukan");
         }
     }
+
+    public void deleteKelas(String namaKelas) {
+        Kelas k1 = searchKelas(namaKelas);
+        if (k1 != null) {
+            daftarKelas.remove(k1);
+            for (int i = 0; i < daftarTentor.size(); i++) {
+                for (int j = 0; j < daftarTentor.get(i).getListKelasSize(); j++) {
+                    if (daftarTentor.get(i).getKelas(j).getNamaKelas().equals(namaKelas)) {
+                        Kelas k2 = daftarTentor.get(i).getKelas(j);
+                        k2 = null;
+                    }
+                }
+
+            }
+        } else {
+            System.out.println("Kelas Yang dicari Tidak Ditemukan");
+        }
+    }
     
-    public void updateMataPelajaran(String namaMapelLama, String namaMapelBaru, int kkm, int jmlBab){
+    public void deleteMateri(String namaMateri){
+        
+    }
+    
+
+//Method Update-updatean    
+    public void updateMataPelajaran(String namaMapelLama, String namaMapelBaru, int kkm, int jmlBab) {
         MataPelajaran m0 = searchMapel(namaMapelLama);
         MataPelajaran m2 = searchMapel(namaMapelBaru);
-        if(m0 != null){
-            if(m2 == null){
+        if (m0 != null) {
+            if (m2 == null) {
                 MataPelajaran m1 = new MataPelajaran(namaMapelBaru, jmlBab, kkm);
                 for (int i = 0; i < daftarKelas.size(); i++) {
                     if (daftarKelas.get(i).getMapel() == m0) {
@@ -308,6 +328,33 @@ public class Aplikasi {
             System.out.println("Mata pelajaran Lama tidak ditemukan");
         }
     }
+
+//    public void updateKelas(String namaKelasLama, String namaKelasBaru)     {
+//        Kelas k0 = searchKelas(namaKelasLama);
+//        Kelas k2 = searchKelas(namaKelasBaru);
+//        MataPelajaran mapelAsli = searchMapel(k0.getMapel().getNamaMapel());
+//        if (k0 != null) {
+//            if (k2 == null) {
+////                Kelas k1 = new Kelas(mapelAsli, namaKelasBaru);
+//                for (int i = 0; i < daftarTentor.size(); i++) {
+//                    for (int j = 0; j < daftarTentor.get(i).getListKelasSize(); j++) {
+//                        if (daftarTentor.get(i).getKelas(j) == k0) {
+//                            daftarTentor.get(i).createKelas(mapelAsli, namaKelasBaru);
+//                        }
+//                    }
+//
+//                }
+//                daftarMapel.set(daftarMapel.indexOf(m0), m1);
+//                System.out.println("UPDATE MAPEL BERHASIL");
+//            } else {
+//                System.out.println("Mata Pelajaran baru sudah ada");
+//            }
+//        } else {
+//            System.out.println("Mata pelajaran Lama tidak ditemukan");
+//        }
+//    }
+
+//    public void updateMateri( )
+    
+    
 }
-
-
