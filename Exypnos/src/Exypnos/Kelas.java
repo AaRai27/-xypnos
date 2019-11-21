@@ -56,9 +56,11 @@ public class Kelas {
     public Siswa getSiswa(int x) {
         return listSiswa.get(x);
     }
+
     public Materi getMateri(int x) {
         return listMateri.get(x);
     }
+
     public Siswa searchSiswa(String id) {
         int i = 0;
         while (i < listSiswa.size()) {
@@ -70,7 +72,7 @@ public class Kelas {
         }
         return null;
     }
-    
+
     public Materi searchMateri(String namaMateri) {
         int i = 0;
         while (i < listMateri.size()) {
@@ -86,8 +88,13 @@ public class Kelas {
     public int getListSiswaSize() {
         return listSiswa.size();
     }
-    
+
     public int getListMateriSize() {
         return listMateri.size();
+    }
+
+    public void removeMateri(String namaMateri) {
+        Materi m1 = searchMateri(namaMateri);
+        listMateri.remove(m1);
     }
 }

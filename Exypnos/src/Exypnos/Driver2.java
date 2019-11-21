@@ -38,6 +38,9 @@ public class Driver2 {
             System.out.println("15. Delete MataPelajaran");
             System.out.println("16. Update MataPelajaran");
             System.out.println("17. Delete Kelas");
+            System.out.println("18. Update Data Diri Siswa");
+            System.out.println("19. Update Data Diri Tentor");
+            System.out.println("20. Tampilkan List Orang");
             System.out.print("Pilihan Anda : ");
             input = pilihan.nextInt();
             System.out.println();
@@ -249,6 +252,30 @@ public class Driver2 {
                 case 17 :
                     String namaKelas = "F0002";
                     bantuan.deleteKelas(namaKelas);
+                    break;
+                case 18 :
+                    String idSiswaUPDATE = "S-9";
+                    String namaSiswaBaru = "Alex Ganteng";
+                    String jurusanBaru = "TEKNIK NUKLIR";
+                    int tahunMasukBaru = 1889;
+                    bantuan.updateSiswaPribadi(idSiswaUPDATE, namaSiswaBaru, jurusanBaru, tahunMasukBaru);
+                    break;
+                case 19 :
+                    String idTentorUPDATE = "Tasdwa-1";
+                    String namaTentorBaru = "Daffa Ganteng";
+                    bantuan.updateTentorPribadi(idTentorUPDATE, namaTentorBaru);
+                    break;
+                case 20 :
+                    bantuan.tampilkanDaftarOrang();
+                    break;
+                case 21 :
+                    bantuan.updateMateri("F0001", "GLBB", "GLB", 69);
+                    break;
+                case 22 :
+                    bantuan.deleteMateri("F0001", "GLB");
+                    break;
+                case 23:
+                    bantuan.updateKelas("K0001", "B0001");
                     break;
             }
         }

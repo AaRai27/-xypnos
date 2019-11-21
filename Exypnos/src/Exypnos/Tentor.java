@@ -15,8 +15,6 @@ import java.util.*;
 public class Tentor extends Orang {
 
     private List<Kelas> listKelas;
-    private String idTentor;
-    private String namaTentor;
     private static int sid = 1;
 
     public Tentor(String namaTentor) {
