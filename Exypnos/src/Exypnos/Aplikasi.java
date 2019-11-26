@@ -73,10 +73,10 @@ public class Aplikasi {
         if (searchSiswa(id) == null) {
             System.out.println("data Siswa tidak ditemukan");
         } else {
-            System.out.println("No.ID\t\t: " + searchSiswa(id).getIdSiswa());
-            System.out.println("Nama\t\t: " + searchSiswa(id).getNamaSiswa());
-            System.out.println("Jurusan\t\t: " + searchSiswa(id).getJurusan());
-            System.out.println("Tahun Masuk\t: " + searchSiswa(id).getTahunMasuk());
+            System.out.println("\t\t\t\tNo.ID\t\t: " + searchSiswa(id).getIdSiswa());
+            System.out.println("\t\t\t\tNama\t\t: " + searchSiswa(id).getNamaSiswa());
+            System.out.println("\t\t\t\tJurusan\t\t: " + searchSiswa(id).getJurusan());
+            System.out.println("\t\t\t\tTahun Masuk\t: " + searchSiswa(id).getTahunMasuk());
             System.out.println("===========================================================");
         }
     }
@@ -97,9 +97,9 @@ public class Aplikasi {
         if (searchMapel(mapel) == null) {
             System.out.println("data  Mata Pelajaran tidak ditemukan");
         } else {
-            System.out.println("Nama Mata Pelajaran\t: " + searchMapel(mapel).getNamaMapel());
-            System.out.println("Jumlah Bab\t\t: " + searchMapel(mapel).getJmlBab());
-            System.out.println("KKM \t\t\t: " + searchMapel(mapel).getKKM());
+            System.out.println("\t\tNama Mata Pelajaran\t: " + searchMapel(mapel).getNamaMapel());
+            System.out.println("\t\tJumlah Bab\t\t: " + searchMapel(mapel).getJmlBab());
+            System.out.println("\t\tKKM \t\t\t: " + searchMapel(mapel).getKKM());
             System.out.println("========================================");
         }
     }
@@ -108,9 +108,9 @@ public class Aplikasi {
         if (searchKelas(kelas) == null) {
             System.out.println("data Kelas tidak ditemukan");
         } else {
-            System.out.println("Kode Kelas\t\t: " + searchKelas(kelas).getNamaKelas());
-            System.out.println("Mata pelajaran\t\t: " + searchKelas(kelas).getMapel().getNamaMapel());
-            System.out.println("Jumlah Siswa\t\t: " + searchKelas(kelas).getListSiswaSize());
+            System.out.println("\tKode Kelas\t\t: " + searchKelas(kelas).getNamaKelas());
+            System.out.println("\tMata pelajaran\t\t: " + searchKelas(kelas).getMapel().getNamaMapel());
+            System.out.println("\tJumlah Siswa\t\t: " + searchKelas(kelas).getListSiswaSize());
             System.out.println("=============================================");
         }
     }
@@ -133,12 +133,13 @@ public class Aplikasi {
             System.out.println("data Kelas tidak ditemukan");
         } else {
             tampilkanSearchKelas(kelas);
-            System.out.println("Materi\t\t: ");
+            System.out.println("\tMateri : ");
             for (int i = 0; i < searchKelas(kelas).getListMateriSize(); i++) {
-                System.out.println("Nama Materi\t:" + searchKelas(kelas).getMateri(i).getNamaMateri());
-                System.out.println("Jumlah Bahasan\t:" + searchKelas(kelas).getMateri(i).getJmlBahasan());
+                System.out.println("\t\tNama Materi\t:" + searchKelas(kelas).getMateri(i).getNamaMateri());
+                System.out.println("\t\tJumlah Bahasan\t:" + searchKelas(kelas).getMateri(i).getJmlBahasan());
             }
-            System.out.println("Nama Siswa Pada Kelas " + kelas + " : ");
+            System.out.println();
+            System.out.println("\t\t\tNama Siswa Pada Kelas " + kelas + " : ");
             for (int i = 0; i < searchKelas(kelas).getListSiswaSize(); i++) {
                 tampilkanSearchSiswa(searchKelas(kelas).getSiswa(i).getIdSiswa());
             }
@@ -169,8 +170,8 @@ public class Aplikasi {
                     cek = true;
                     tampilkanSearchKelas(daftarKelas.get(i).getNamaKelas());
                     for (int j = 0; j < daftarKelas.get(i).getListMateriSize(); j++) {
-                        System.out.println("Nama materi :" + daftarKelas.get(i).getMateri(j).getNamaMateri());
-                        System.out.println("Jumlah Bahasan :" + daftarKelas.get(i).getMateri(j).getJmlBahasan());
+                        System.out.println("\tNama materi :" + daftarKelas.get(i).getMateri(j).getNamaMateri());
+                        System.out.println("\tJumlah Bahasan :" + daftarKelas.get(i).getMateri(j).getJmlBahasan());
                     }
                 }
             }
@@ -407,6 +408,124 @@ public class Aplikasi {
             }
         } else {
             System.out.println("Kelas Lama tidak ditemukan");
+        }
+    }
+
+    public String toStringMapel(String mapel) {
+        if (searchMapel(mapel) == null) {
+            return "data Mata Pelajaran tidak ditemukan";
+        } else {
+            return "Nama Mata Pelajaran\t: " + searchMapel(mapel).getNamaMapel() + "\nJumlah Bab\t\t: " + searchMapel(mapel).getJmlBab() + "\nKKM \t\t: " + searchMapel(mapel).getKKM();
+        }
+    }
+
+    public String toStringSiswa(String id) {
+        if (searchSiswa(id) == null) {
+            return "data Siswa tidak ditemukan";
+        } else {
+            return "No.ID\t: " + searchSiswa(id).getIdSiswa() + "\nNama\t: " + searchSiswa(id).getNamaSiswa() + "\nJurusan\t: " + searchSiswa(id).getJurusan() + "\nTahun Masuk\t: " + searchSiswa(id).getTahunMasuk();
+        }
+    }
+
+    public String toStringkelas(String kelas) {
+        if (searchKelas(kelas) == null) {
+            return "data Kelas tidak ditemukan";
+        } else {
+            return "Kode Kelas\t\t: " + searchKelas(kelas).getNamaKelas() + "\nMata pelajaran\t\t: " + searchKelas(kelas).getMapel().getNamaMapel() + "\nJumlah Siswa\t\t: " + searchKelas(kelas).getListSiswaSize();
+        }
+    }
+
+    public String toStringMateri(String kelas) {
+        Kelas k1 = searchKelas(kelas);
+        String text;
+        if (k1 != null) {
+            text = "Mata pelajaran\t\t: " + k1.getMapel().getNamaMapel() + "\nKKM\t\t: " + k1.getMapel().getKKM() + "\n============ MATERI ==============";
+            for (int i = 0; i < k1.getListMateriSize(); i++) {
+                text = text + "\n" + (i + 1) + ". nama Materi\t\t :" + k1.getMateri(i).getNamaMateri();
+                text = text + "\n Jumlah Sub bahasan\t :" + k1.getMateri(i).getJmlBahasan();
+            }
+        } else {
+            text = "KOSONG";
+        }
+        return text;
+    }
+
+    public String[] getKelasListId() {
+        String[] listId = new String[daftarKelas.size()];
+        for (int i = 0; i < daftarKelas.size(); i++) {
+            listId[i] = daftarKelas.get(i).getNamaKelas();
+        }
+        return listId;
+    }
+
+    public String[] getKelasListSiswa(String idSiswa) {
+        Siswa s1 = searchSiswa(idSiswa);
+        int x = 0;
+        if (s1 != null) {
+            for (int i = 0; i < daftarKelas.size(); i++) {
+                if (daftarKelas.get(i).searchSiswa(idSiswa) != null) {
+                    x++;
+                }
+            }
+        }
+        String[] listId = new String[x];
+        x = 0;
+        if (s1 != null) {
+            for (int i = 0; i < daftarKelas.size(); i++) {
+                if (daftarKelas.get(i).searchSiswa(idSiswa) != null) {
+                    listId[x] = (daftarKelas.get(i).getNamaKelas());
+                    x++;
+                }
+            }
+        }
+        return listId;
+    }
+
+    public String[] getMapelListSiswa(String idSiswa) {
+        Siswa s1 = searchSiswa(idSiswa);
+        int x = 0;
+        if (s1 != null) {
+            for (int i = 0; i < daftarKelas.size(); i++) {
+                if (daftarKelas.get(i).searchSiswa(idSiswa) != null) {
+                    x++;
+                }
+            }
+        }
+        String[] listId = new String[x];
+        x = 0;
+        if (s1 != null) {
+            for (int i = 0; i < daftarKelas.size(); i++) {
+                if (daftarKelas.get(i).searchSiswa(idSiswa) != null) {
+                    listId[x] = (daftarKelas.get(i).getMapel().getNamaMapel());
+                    x++;
+                }
+            }
+        }
+        return listId;
+    }
+
+    public String[] getKelasListMapel() {
+        String[] listMapel = new String[daftarMapel.size()];
+        for (int i = 0; i < daftarMapel.size(); i++) {
+            listMapel[i] = daftarMapel.get(i).getNamaMapel();
+        }
+        return listMapel;
+    }
+
+    public void updateSiswa(String id, String namaSiswaBaru, String jurusan, int tahunMasuk) {
+        Siswa s0 = searchSiswa(id);
+        if (s0 != null) {
+            for (int i = 0; i < daftarSiswa.size(); i++) {
+                if (daftarSiswa.get(i).equals(s0)) {
+                    daftarSiswa.get(i).setJurusan(jurusan);
+                    daftarSiswa.get(i).setNama(namaSiswaBaru);
+                    daftarSiswa.get(i).setTahunMasuk(tahunMasuk);
+                }
+            }
+            daftarSiswa.set(daftarSiswa.indexOf(s0), s0);
+            System.out.println("UPDATE Siswa BERHASIL");
+        } else {
+            System.out.println("Siswa Lama tidak ditemukan");
         }
     }
 
