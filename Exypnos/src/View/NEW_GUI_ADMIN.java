@@ -6,8 +6,13 @@
 package View;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -46,6 +51,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         btnCreateTentor = new javax.swing.JButton();
         btnCreateMapel = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        btnCreateSiswa = new javax.swing.JButton();
         panelView = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnViewMapel = new javax.swing.JButton();
@@ -77,6 +83,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         btnAksiDeleteKelas = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        labelStatusDeleteKelas = new javax.swing.JLabel();
         panelAksiDeleteMapel = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         listDeleteMapelDaftarMapel = new javax.swing.JList<>();
@@ -86,6 +93,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         btnAksiDeleteMapel = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        labelStatusDeleteMapel = new javax.swing.JLabel();
         panelAksiViewTentor = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         listViewTentorDaftarTentor = new javax.swing.JList<>();
@@ -104,7 +112,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         panelAksiViewMapel = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        listViewMapelDaftarMapel = new javax.swing.JList<>();
+        listViewMapelDaftarMapel1 = new javax.swing.JList<>();
         jScrollPane12 = new javax.swing.JScrollPane();
         taViewMapelDeskripsiMapel = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
@@ -130,23 +138,10 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         jScrollPane19 = new javax.swing.JScrollPane();
         listViewSiswaDaftarSiswa = new javax.swing.JList<>();
         jScrollPane20 = new javax.swing.JScrollPane();
-        taViewSiswaDetailSIswa = new javax.swing.JTextArea();
+        taViewSiswaDetailSiswa = new javax.swing.JTextArea();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        panelAksiUpdateMapel = new javax.swing.JPanel();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        listUpdateMapelDaftarMapel = new javax.swing.JList<>();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        tfNamaMapelUpdateMapel = new javax.swing.JTextField();
-        tfKkmUpdateMapel = new javax.swing.JTextField();
-        tfJumlahBabUpdateMapel = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        javax.swing.JButton btnUpdateMapelUpdate = new javax.swing.JButton();
-        labelStatusUpdate = new javax.swing.JLabel();
         panelAksiUpdateKelas = new javax.swing.JPanel();
         jScrollPane18 = new javax.swing.JScrollPane();
         listUpdateKelasDaftarKelas = new javax.swing.JList<>();
@@ -158,6 +153,68 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         btnUpdateKelasUpdate = new javax.swing.JButton();
         labelStatusUpdateKelas = new javax.swing.JLabel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        taDeskripsiKelas = new javax.swing.JTextArea();
+        panelAksiUpdateMapel = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listMapelUpdate = new javax.swing.JList<>();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        taDeskripsiMapelUpdate = new javax.swing.JTextArea();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        tfUpdateMapelNama = new javax.swing.JTextField();
+        tfUpdateBabMapel = new javax.swing.JTextField();
+        tfUpdateKkmMapel = new javax.swing.JTextField();
+        btnUpdateMapel1 = new javax.swing.JButton();
+        jLabel47 = new javax.swing.JLabel();
+        labelStatusUpdateMapel = new javax.swing.JLabel();
+        panelAksiCreateMapel = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        tfNamaMapelCreate = new javax.swing.JTextField();
+        tfJumlahBabCreate = new javax.swing.JTextField();
+        tfKkmCreate = new javax.swing.JTextField();
+        btnDaftarMapel = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listMapelCreate = new javax.swing.JList<>();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        taDeskripsiMapelCreate = new javax.swing.JTextArea();
+        jLabel53 = new javax.swing.JLabel();
+        panelAksiCreateTentor = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tfCreateTentorNamaTentor = new javax.swing.JTextField();
+        btnCreateTentorDaftar = new javax.swing.JButton();
+        panelAksiCreateKelas = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        listCreateKelasTentor = new javax.swing.JList<>();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        listCreateKelasMapel = new javax.swing.JList<>();
+        jLabel54 = new javax.swing.JLabel();
+        tfCreateKelasNamaKelas = new javax.swing.JTextField();
+        btnCreatekelasDaftar = new javax.swing.JButton();
+        panelAksiCreateSiswa = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        tfCreateSiswaNamaSiswa = new javax.swing.JTextField();
+        tfCreateSiswaJurusan = new javax.swing.JTextField();
+        tfCreateSiswaTahunMasuk = new javax.swing.JTextField();
+        btnCreateSiswaDaftar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -173,9 +230,11 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         btnLogout.setBackground(new java.awt.Color(255, 51, 51));
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 0));
-        btnLogout.setText("LOGOUT");
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/rsz_logoutt.png"))); // NOI18N
         btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnLogout.setBorderPainted(false);
+        btnLogout.setContentAreaFilled(false);
+        btnLogout.setFocusable(false);
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
@@ -183,7 +242,15 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         });
 
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnBack.setText("HOME");
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/rsz_home.png"))); // NOI18N
+        btnBack.setAlignmentY(0.0F);
+        btnBack.setBorder(null);
+        btnBack.setBorderPainted(false);
+        btnBack.setContentAreaFilled(false);
+        btnBack.setDefaultCapable(false);
+        btnBack.setDisabledSelectedIcon(null);
+        btnBack.setDoubleBuffered(true);
+        btnBack.setFocusable(false);
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -199,30 +266,31 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(213, 213, 213)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
-                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 302, Short.MAX_VALUE)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         panelHeaderLayout.setVerticalGroup(
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelHeaderLayout.createSequentialGroup()
-                .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
-                        .addContainerGap(12, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
+                .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelHeaderLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnLogout))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelHeaderLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHeaderLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel2))
+                            .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelHeaderLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(panelHeaderLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBack))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panelMoveLayout.setLayout(new java.awt.CardLayout());
@@ -258,6 +326,13 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel4.setText("CREATE");
 
+        btnCreateSiswa.setText("SISWA");
+        btnCreateSiswa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateSiswaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelCreateLayout = new javax.swing.GroupLayout(panelCreate);
         panelCreate.setLayout(panelCreateLayout);
         panelCreateLayout.setHorizontalGroup(
@@ -268,7 +343,8 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCreateLayout.createSequentialGroup()
                         .addGroup(panelCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnCreateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCreateKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCreateKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCreateSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCreateLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -284,16 +360,18 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCreateLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addComponent(btnCreateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(31, 31, 31)
                 .addComponent(btnCreateKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(262, 262, 262))
+                .addGap(36, 36, 36)
+                .addComponent(btnCreateSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(201, 201, 201))
             .addGroup(panelCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelCreateLayout.createSequentialGroup()
                     .addGap(85, 85, 85)
                     .addComponent(btnCreateTentor, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(477, Short.MAX_VALUE)))
+                    .addContainerGap(492, Short.MAX_VALUE)))
         );
 
         panelChange.add(panelCreate, "card2");
@@ -384,12 +462,12 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addComponent(btnViewKelasSiswaTentor, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnViewMateriSetiapKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
             .addGroup(panelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelViewLayout.createSequentialGroup()
                     .addGap(72, 72, 72)
                     .addComponent(btnViewTentor, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(498, Short.MAX_VALUE)))
+                    .addContainerGap(513, Short.MAX_VALUE)))
         );
 
         panelChange.add(panelView, "card3");
@@ -439,7 +517,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addComponent(btnUpdateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(btnUpdateKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addContainerGap(415, Short.MAX_VALUE))
         );
 
         panelChange.add(panelUpdate, "card4");
@@ -490,7 +568,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addComponent(btnDeleteMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(btnDeleteKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(419, Short.MAX_VALUE))
+                .addContainerGap(434, Short.MAX_VALUE))
         );
 
         panelChange.add(panelDelete, "card5");
@@ -558,12 +636,12 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                         .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -615,6 +693,8 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("DESKRIPSI KELAS");
 
+        labelStatusDeleteKelas.setText("status");
+
         javax.swing.GroupLayout panelAksiDeleteKelasLayout = new javax.swing.GroupLayout(panelAksiDeleteKelas);
         panelAksiDeleteKelas.setLayout(panelAksiDeleteKelasLayout);
         panelAksiDeleteKelasLayout.setHorizontalGroup(
@@ -638,6 +718,10 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(22, 22, 22))
+            .addGroup(panelAksiDeleteKelasLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(labelStatusDeleteKelas)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelAksiDeleteKelasLayout.setVerticalGroup(
             panelAksiDeleteKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -654,7 +738,9 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                     .addComponent(jScrollPane2))
                 .addGap(18, 18, 18)
                 .addComponent(btnAksiDeleteKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(labelStatusDeleteKelas)
+                .addGap(21, 21, 21))
         );
 
         panelMoveLayout.add(panelAksiDeleteKelas, "card3");
@@ -677,6 +763,8 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setText("DESKRIPSI MATA PELAJARAN");
+
+        labelStatusDeleteMapel.setText("status");
 
         javax.swing.GroupLayout panelAksiDeleteMapelLayout = new javax.swing.GroupLayout(panelAksiDeleteMapel);
         panelAksiDeleteMapel.setLayout(panelAksiDeleteMapelLayout);
@@ -701,6 +789,10 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(22, 22, 22))
+            .addGroup(panelAksiDeleteMapelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelStatusDeleteMapel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelAksiDeleteMapelLayout.setVerticalGroup(
             panelAksiDeleteMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -717,7 +809,9 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                     .addComponent(jScrollPane6))
                 .addGap(18, 18, 18)
                 .addComponent(btnAksiDeleteMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(labelStatusDeleteMapel)
+                .addGap(19, 19, 19))
         );
 
         panelMoveLayout.add(panelAksiDeleteMapel, "card3");
@@ -773,7 +867,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addGroup(panelAksiViewTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jScrollPane8))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         panelMoveLayout.add(panelAksiViewTentor, "card3");
@@ -829,14 +923,14 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addGroup(panelAksiViewKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jScrollPane10))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         panelMoveLayout.add(panelAksiViewKelas, "card3");
 
         panelAksiViewMapel.setBackground(new java.awt.Color(111, 185, 143));
 
-        jScrollPane11.setViewportView(listViewMapelDaftarMapel);
+        jScrollPane11.setViewportView(listViewMapelDaftarMapel1);
 
         taViewMapelDeskripsiMapel.setColumns(20);
         taViewMapelDeskripsiMapel.setRows(5);
@@ -885,7 +979,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addGroup(panelAksiViewMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jScrollPane12))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         panelMoveLayout.add(panelAksiViewMapel, "card3");
@@ -941,7 +1035,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addGroup(panelAksiViewSiswaKelasTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jScrollPane14))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         panelMoveLayout.add(panelAksiViewSiswaKelasTentor, "card3");
@@ -997,7 +1091,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addGroup(panelAksiViewMateriKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jScrollPane16))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         panelMoveLayout.add(panelAksiViewMateriKelas, "card3");
@@ -1006,9 +1100,9 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
 
         jScrollPane19.setViewportView(listViewSiswaDaftarSiswa);
 
-        taViewSiswaDetailSIswa.setColumns(20);
-        taViewSiswaDetailSIswa.setRows(5);
-        jScrollPane20.setViewportView(taViewSiswaDetailSIswa);
+        taViewSiswaDetailSiswa.setColumns(20);
+        taViewSiswaDetailSiswa.setRows(5);
+        jScrollPane20.setViewportView(taViewSiswaDetailSiswa);
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel35.setText("VIEW SISWA");
@@ -1053,117 +1147,10 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addGroup(panelAksiViewSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                     .addComponent(jScrollPane20))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         panelMoveLayout.add(panelAksiViewSiswa, "card3");
-
-        panelAksiUpdateMapel.setBackground(new java.awt.Color(111, 185, 143));
-
-        jScrollPane17.setViewportView(listUpdateMapelDaftarMapel);
-
-        jLabel32.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel32.setText("UPDATE MATA PELAJARAN");
-
-        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel33.setText("DAFTAR MATA PELAJARAN");
-
-        tfNamaMapelUpdateMapel.setEditable(false);
-
-        tfKkmUpdateMapel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfKkmUpdateMapelActionPerformed(evt);
-            }
-        });
-
-        tfJumlahBabUpdateMapel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfJumlahBabUpdateMapelActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setText("NAMA MATA PELAJARAN");
-
-        jLabel12.setText("JUMLAH BAB");
-
-        jLabel13.setText("KKM");
-
-        btnUpdateMapelUpdate.setText("UPDATE");
-        btnUpdateMapelUpdate.setToolTipText("");
-
-        labelStatusUpdate.setForeground(new java.awt.Color(255, 255, 0));
-        labelStatusUpdate.setText("STATUS UPDATE");
-
-        javax.swing.GroupLayout panelAksiUpdateMapelLayout = new javax.swing.GroupLayout(panelAksiUpdateMapel);
-        panelAksiUpdateMapel.setLayout(panelAksiUpdateMapelLayout);
-        panelAksiUpdateMapelLayout.setHorizontalGroup(
-            panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiUpdateMapelLayout.createSequentialGroup()
-                .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelAksiUpdateMapelLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                                .addComponent(labelStatusUpdate)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                                .addComponent(jLabel33)
-                                .addGap(490, 794, Short.MAX_VALUE))
-                            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                                        .addGap(197, 197, 197)
-                                        .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfNamaMapelUpdateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfKkmUpdateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfJumlahBabUpdateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel13))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiUpdateMapelLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnUpdateMapelUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(270, 270, 270)))))))
-                .addGap(22, 22, 22))
-        );
-        panelAksiUpdateMapelLayout.setVerticalGroup(
-            panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel32)
-                .addGap(49, 49, 49)
-                .addComponent(jLabel33)
-                .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfNamaMapelUpdateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfJumlahBabUpdateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfKkmUpdateMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnUpdateMapelUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(labelStatusUpdate)
-                .addContainerGap())
-        );
-
-        panelMoveLayout.add(panelAksiUpdateMapel, "card3");
 
         panelAksiUpdateKelas.setBackground(new java.awt.Color(111, 185, 143));
 
@@ -1175,7 +1162,13 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         jLabel39.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel39.setText("DAFTAR KELAS");
 
-        tfUpdateKelasNamaKelas.setEditable(false);
+        tfUpdateKelasNamaKelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfUpdateKelasNamaKelasActionPerformed(evt);
+            }
+        });
+
+        tfUpdateKelasMataPelajaran.setEditable(false);
 
         jLabel40.setText("NAMA KELAS");
 
@@ -1187,41 +1180,41 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         labelStatusUpdateKelas.setForeground(new java.awt.Color(255, 255, 0));
         labelStatusUpdateKelas.setText("STATUS UPDATE");
 
+        taDeskripsiKelas.setColumns(20);
+        taDeskripsiKelas.setRows(5);
+        jScrollPane17.setViewportView(taDeskripsiKelas);
+
         javax.swing.GroupLayout panelAksiUpdateKelasLayout = new javax.swing.GroupLayout(panelAksiUpdateKelas);
         panelAksiUpdateKelas.setLayout(panelAksiUpdateKelasLayout);
         panelAksiUpdateKelasLayout.setHorizontalGroup(
             panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiUpdateKelasLayout.createSequentialGroup()
-                .addGroup(panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(64, 64, 64)
+                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 680, Short.MAX_VALUE))
+            .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelAksiUpdateKelasLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addComponent(jLabel39)
+                        .addGap(512, 911, Short.MAX_VALUE))
+                    .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
                         .addGroup(panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
-                                .addComponent(labelStatusUpdateKelas)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
-                                .addComponent(jLabel39)
-                                .addGap(490, 889, Short.MAX_VALUE))
+                            .addComponent(labelStatusUpdateKelas)
                             .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
                                 .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
-                                        .addGap(197, 197, 197)
-                                        .addGroup(panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfUpdateKelasNamaKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfUpdateKelasMataPelajaran, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel40)
-                                            .addComponent(jLabel41))
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(35, 35, 35)
+                                .addGroup(panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfUpdateKelasNamaKelas)
+                                    .addComponent(tfUpdateKelasMataPelajaran)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel41)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiUpdateKelasLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnUpdateKelasUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(278, 278, 278)))))))
-                .addGap(22, 22, 22))
+                                        .addGap(161, 161, 161))
+                                    .addComponent(jScrollPane17))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panelAksiUpdateKelasLayout.setVerticalGroup(
             panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1230,12 +1223,16 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                 .addComponent(jLabel38)
                 .addGap(49, 49, 49)
                 .addComponent(jLabel39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelAksiUpdateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelStatusUpdateKelas)
+                        .addContainerGap())
                     .addGroup(panelAksiUpdateKelasLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel40)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfUpdateKelasNamaKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1244,13 +1241,513 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfUpdateKelasMataPelajaran, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
-                        .addComponent(btnUpdateKelasUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(labelStatusUpdateKelas)
-                .addContainerGap())
+                        .addComponent(btnUpdateKelasUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(125, 125, 125))))
         );
 
         panelMoveLayout.add(panelAksiUpdateKelas, "card3");
+
+        panelAksiUpdateMapel.setBackground(new java.awt.Color(111, 185, 143));
+
+        listMapelUpdate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, null, null, new java.awt.Color(111, 185, 143)));
+        jScrollPane4.setViewportView(listMapelUpdate);
+
+        jLabel34.setText("List Mata Pelajaran");
+
+        jLabel42.setText("Deskripsi");
+
+        taDeskripsiMapelUpdate.setColumns(20);
+        taDeskripsiMapelUpdate.setRows(5);
+        jScrollPane21.setViewportView(taDeskripsiMapelUpdate);
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jLabel43.setText("Update Mata Pelajaran");
+
+        jLabel44.setText("Nama Mata Pelajaran");
+
+        jLabel45.setText("Jumlah Bab");
+
+        jLabel46.setText("KKM");
+
+        tfUpdateBabMapel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfUpdateBabMapelActionPerformed(evt);
+            }
+        });
+
+        btnUpdateMapel1.setText("Update");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel43)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44)
+                            .addComponent(jLabel45)
+                            .addComponent(jLabel46))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfUpdateMapelNama)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfUpdateBabMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfUpdateKkmMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 398, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnUpdateMapel1)))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(tfUpdateMapelNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(tfUpdateBabMapel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(tfUpdateKkmMapel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(btnUpdateMapel1)
+                .addContainerGap())
+        );
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel47.setText("UPDATE MATA PELAJARAN");
+
+        labelStatusUpdateMapel.setText("status");
+
+        javax.swing.GroupLayout panelAksiUpdateMapelLayout = new javax.swing.GroupLayout(panelAksiUpdateMapel);
+        panelAksiUpdateMapel.setLayout(panelAksiUpdateMapelLayout);
+        panelAksiUpdateMapelLayout.setHorizontalGroup(
+            panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
+                .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane21)
+                            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
+                                .addComponent(jLabel42)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
+                        .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(labelStatusUpdateMapel)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelAksiUpdateMapelLayout.setVerticalGroup(
+            panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiUpdateMapelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel47)
+                .addGap(36, 36, 36)
+                .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAksiUpdateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelAksiUpdateMapelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addComponent(labelStatusUpdateMapel)
+                .addContainerGap())
+        );
+
+        panelMoveLayout.add(panelAksiUpdateMapel, "card6");
+
+        panelAksiCreateMapel.setBackground(new java.awt.Color(111, 185, 143));
+
+        jPanel3.setBackground(new java.awt.Color(44, 120, 115));
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jLabel48.setText("Buat Mata pelajaran Baru");
+
+        jLabel49.setText("Nama Mata Pelajaran");
+
+        jLabel50.setText("Jumlah Bab");
+
+        jLabel51.setText("KKM");
+
+        tfNamaMapelCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNamaMapelCreateActionPerformed(evt);
+            }
+        });
+
+        tfJumlahBabCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfJumlahBabCreateActionPerformed(evt);
+            }
+        });
+
+        tfKkmCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfKkmCreateActionPerformed(evt);
+            }
+        });
+
+        btnDaftarMapel.setText("Daftar");
+        btnDaftarMapel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDaftarMapelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnDaftarMapel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel48)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel49)
+                            .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel51, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfNamaMapelCreate)
+                            .addComponent(tfJumlahBabCreate)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(tfKkmCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 257, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel48)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(tfNamaMapelCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(tfJumlahBabCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(tfKkmCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(btnDaftarMapel)
+                .addContainerGap(237, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(44, 120, 115));
+        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jLabel52.setText("Daftar Semua Mata Pelajaran");
+
+        jScrollPane3.setViewportView(listMapelCreate);
+
+        taDeskripsiMapelCreate.setEditable(false);
+        taDeskripsiMapelCreate.setColumns(20);
+        taDeskripsiMapelCreate.setRows(5);
+        jScrollPane22.setViewportView(taDeskripsiMapelCreate);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel52)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel52)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane22))
+                .addContainerGap())
+        );
+
+        jLabel53.setBackground(new java.awt.Color(111, 185, 143));
+        jLabel53.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
+        jLabel53.setText("Create dan View Mata Pelajaran");
+
+        javax.swing.GroupLayout panelAksiCreateMapelLayout = new javax.swing.GroupLayout(panelAksiCreateMapel);
+        panelAksiCreateMapel.setLayout(panelAksiCreateMapelLayout);
+        panelAksiCreateMapelLayout.setHorizontalGroup(
+            panelAksiCreateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiCreateMapelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelAksiCreateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAksiCreateMapelLayout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelAksiCreateMapelLayout.createSequentialGroup()
+                        .addComponent(jLabel53)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelAksiCreateMapelLayout.setVerticalGroup(
+            panelAksiCreateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiCreateMapelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel53)
+                .addGap(55, 55, 55)
+                .addGroup(panelAksiCreateMapelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
+
+        panelMoveLayout.add(panelAksiCreateMapel, "card4");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
+        jLabel11.setText("Create Tentor");
+
+        jLabel12.setText("Nama Tentor");
+
+        btnCreateTentorDaftar.setText("Daftar");
+        btnCreateTentorDaftar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateTentorDaftarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelAksiCreateTentorLayout = new javax.swing.GroupLayout(panelAksiCreateTentor);
+        panelAksiCreateTentor.setLayout(panelAksiCreateTentorLayout);
+        panelAksiCreateTentorLayout.setHorizontalGroup(
+            panelAksiCreateTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiCreateTentorLayout.createSequentialGroup()
+                .addGroup(panelAksiCreateTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAksiCreateTentorLayout.createSequentialGroup()
+                        .addGap(459, 459, 459)
+                        .addComponent(jLabel11))
+                    .addGroup(panelAksiCreateTentorLayout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(jLabel12)
+                        .addGap(32, 32, 32)
+                        .addComponent(tfCreateTentorNamaTentor, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(307, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiCreateTentorLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnCreateTentorDaftar)
+                .addGap(484, 484, 484))
+        );
+        panelAksiCreateTentorLayout.setVerticalGroup(
+            panelAksiCreateTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiCreateTentorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addGap(53, 53, 53)
+                .addGroup(panelAksiCreateTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(tfCreateTentorNamaTentor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCreateTentorDaftar)
+                .addContainerGap(524, Short.MAX_VALUE))
+        );
+
+        panelMoveLayout.add(panelAksiCreateTentor, "card14");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
+        jLabel13.setText("Create Kelas");
+
+        jScrollPane23.setViewportView(listCreateKelasTentor);
+
+        jLabel32.setText("ID-Tentor");
+
+        jLabel33.setText("Nama Mata Pelajaran");
+
+        jScrollPane24.setViewportView(listCreateKelasMapel);
+
+        jLabel54.setText("Nama Kelas");
+
+        tfCreateKelasNamaKelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCreateKelasNamaKelasActionPerformed(evt);
+            }
+        });
+
+        btnCreatekelasDaftar.setText("Buat Kelas");
+
+        javax.swing.GroupLayout panelAksiCreateKelasLayout = new javax.swing.GroupLayout(panelAksiCreateKelas);
+        panelAksiCreateKelas.setLayout(panelAksiCreateKelasLayout);
+        panelAksiCreateKelasLayout.setHorizontalGroup(
+            panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiCreateKelasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addGroup(panelAksiCreateKelasLayout.createSequentialGroup()
+                        .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel32)
+                            .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33)
+                            .addGroup(panelAksiCreateKelasLayout.createSequentialGroup()
+                                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelAksiCreateKelasLayout.createSequentialGroup()
+                                        .addComponent(jLabel54)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfCreateKelasNamaKelas, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAksiCreateKelasLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnCreatekelasDaftar)))))))
+                .addContainerGap())
+        );
+        panelAksiCreateKelasLayout.setVerticalGroup(
+            panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiCreateKelasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addGap(36, 36, 36)
+                .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33))
+                .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAksiCreateKelasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane24)
+                            .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(panelAksiCreateKelasLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(panelAksiCreateKelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel54)
+                            .addComponent(tfCreateKelasNamaKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(btnCreatekelasDaftar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        panelMoveLayout.add(panelAksiCreateKelas, "card15");
+
+        jLabel55.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
+        jLabel55.setText("Create Siswa");
+
+        jLabel56.setText("Nama Siswa");
+
+        jLabel57.setText("Jurusan");
+
+        jLabel58.setText("Tahun Masuk");
+
+        tfCreateSiswaJurusan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCreateSiswaJurusanActionPerformed(evt);
+            }
+        });
+
+        tfCreateSiswaTahunMasuk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCreateSiswaTahunMasukActionPerformed(evt);
+            }
+        });
+
+        btnCreateSiswaDaftar.setText("Daftar");
+        btnCreateSiswaDaftar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateSiswaDaftarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelAksiCreateSiswaLayout = new javax.swing.GroupLayout(panelAksiCreateSiswa);
+        panelAksiCreateSiswa.setLayout(panelAksiCreateSiswaLayout);
+        panelAksiCreateSiswaLayout.setHorizontalGroup(
+            panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiCreateSiswaLayout.createSequentialGroup()
+                .addGroup(panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAksiCreateSiswaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel55))
+                    .addGroup(panelAksiCreateSiswaLayout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addGroup(panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnCreateSiswaDaftar)
+                            .addGroup(panelAksiCreateSiswaLayout.createSequentialGroup()
+                                .addGroup(panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel56)
+                                    .addComponent(jLabel57)
+                                    .addComponent(jLabel58))
+                                .addGap(26, 26, 26)
+                                .addGroup(panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfCreateSiswaNamaSiswa)
+                                    .addComponent(tfCreateSiswaJurusan)
+                                    .addComponent(tfCreateSiswaTahunMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(331, Short.MAX_VALUE))
+        );
+        panelAksiCreateSiswaLayout.setVerticalGroup(
+            panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAksiCreateSiswaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel55)
+                .addGap(160, 160, 160)
+                .addGroup(panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(tfCreateSiswaNamaSiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57)
+                    .addComponent(tfCreateSiswaJurusan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(panelAksiCreateSiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel58)
+                    .addComponent(tfCreateSiswaTahunMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(btnCreateSiswaDaftar)
+                .addContainerGap(274, Short.MAX_VALUE))
+        );
+
+        panelMoveLayout.add(panelAksiCreateSiswa, "card16");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1271,7 +1768,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(658, Short.MAX_VALUE))
+                .addContainerGap(670, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(114, 114, 114)
@@ -1314,30 +1811,25 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         panelChange.revalidate();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void tfKkmUpdateMapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfKkmUpdateMapelActionPerformed
+    private void btnCreateKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateKelasActionPerformed
         panelMoveLayout.removeAll();
-        panelMoveLayout.add(panelMainMenu);
+        panelMoveLayout.add(panelAksiCreateKelas);
         panelMoveLayout.repaint();
         panelMoveLayout.revalidate();
-    }//GEN-LAST:event_tfKkmUpdateMapelActionPerformed
-
-    private void tfJumlahBabUpdateMapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJumlahBabUpdateMapelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfJumlahBabUpdateMapelActionPerformed
-
-    private void btnCreateKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateKelasActionPerformed
-//        panelChange.removeAll();
-//        panelChange.add(panelCreate);
-//        panelChange.repaint();
-//        panelChange.revalidate();
     }//GEN-LAST:event_btnCreateKelasActionPerformed
 
     private void btnCreateTentorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateTentorActionPerformed
-        // TODO add your handling code here:
+        panelMoveLayout.removeAll();
+        panelMoveLayout.add(panelAksiCreateTentor);
+        panelMoveLayout.repaint();
+        panelMoveLayout.revalidate();
     }//GEN-LAST:event_btnCreateTentorActionPerformed
 
     private void btnCreateMapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateMapelActionPerformed
-        // TODO add your handling code here:
+        panelMoveLayout.removeAll();
+        panelMoveLayout.add(panelAksiCreateMapel);
+        panelMoveLayout.repaint();
+        panelMoveLayout.revalidate();
     }//GEN-LAST:event_btnCreateMapelActionPerformed
 
     private void btnViewMapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMapelActionPerformed
@@ -1417,7 +1909,73 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         panelMoveLayout.revalidate();
     }//GEN-LAST:event_btnBackActionPerformed
 
-    
+    private void tfNamaMapelCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNamaMapelCreateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNamaMapelCreateActionPerformed
+
+    private void tfJumlahBabCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJumlahBabCreateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfJumlahBabCreateActionPerformed
+
+    private void tfKkmCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfKkmCreateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfKkmCreateActionPerformed
+
+    private void btnDaftarMapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarMapelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDaftarMapelActionPerformed
+
+    private void tfUpdateKelasNamaKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUpdateKelasNamaKelasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfUpdateKelasNamaKelasActionPerformed
+
+    private void tfUpdateBabMapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUpdateBabMapelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfUpdateBabMapelActionPerformed
+
+    private void btnCreateTentorDaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateTentorDaftarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateTentorDaftarActionPerformed
+
+    private void tfCreateKelasNamaKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCreateKelasNamaKelasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCreateKelasNamaKelasActionPerformed
+
+    private void tfCreateSiswaJurusanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCreateSiswaJurusanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCreateSiswaJurusanActionPerformed
+
+    private void tfCreateSiswaTahunMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCreateSiswaTahunMasukActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCreateSiswaTahunMasukActionPerformed
+
+    private void btnCreateSiswaDaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateSiswaDaftarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateSiswaDaftarActionPerformed
+
+    private void btnCreateSiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateSiswaActionPerformed
+        // TODO add your handling code here:
+        panelMoveLayout.removeAll();
+        panelMoveLayout.add(panelAksiCreateSiswa);
+        panelMoveLayout.repaint();
+        panelMoveLayout.revalidate();
+    }//GEN-LAST:event_btnCreateSiswaActionPerformed
+
+    public void resetTfView(){
+        tfJumlahBabCreate.setText("");
+        tfKkmCreate.setText("");
+        tfNamaMapelCreate.setText("");
+        tfUpdateBabMapel.setText("");
+        tfUpdateKelasMataPelajaran.setText("");
+        tfUpdateKelasNamaKelas.setText("");
+        tfUpdateKkmMapel.setText("");
+        tfUpdateMapelNama.setText("");
+        tfCreateTentorNamaTentor.setText("");
+        tfCreateKelasNamaKelas.setText("");
+        tfCreateSiswaJurusan.setText("");
+        tfCreateSiswaNamaSiswa.setText("");
+        tfCreateSiswaTahunMasuk.setText("");
+    } 
     public void addActionListener(ActionListener a1){
         btnCreate.addActionListener(a1);
         btnCreateKelas.addActionListener(a1);
@@ -1425,9 +1983,13 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         btnCreateTentor.addActionListener(a1);
         btnDelete.addActionListener(a1);
         btnDeleteKelas.addActionListener(a1);
+        btnAksiDeleteKelas.addActionListener(a1);
         btnDeleteMapel.addActionListener(a1);
         btnUpdate.addActionListener(a1);
-        btnUpdateKelas.addActionListener(a1);
+        //btnUpdateKelas.addActionListener(a1);
+        btnUpdateKelasUpdate.addActionListener(a1);
+        btnCreatekelasDaftar.addActionListener(a1);
+        btnUpdateMapel1.addActionListener(a1);
         btnUpdateMapel.addActionListener(a1);
         btnView.addActionListener(a1);
         btnViewKelas.addActionListener(a1);
@@ -1437,114 +1999,308 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         btnViewSiswa.addActionListener(a1);
         btnViewTentor.addActionListener(a1);
         btnLogout.addActionListener(a1);
+        btnAksiDeleteKelas.addActionListener(a1);
+        btnAksiDeleteMapel.addActionListener(a1);
+        btnDaftarMapel.addActionListener(a1);
+        btnCreateTentorDaftar.addActionListener(a1);
+        btnCreateSiswaDaftar.addActionListener(a1);
+    }
+     public void addMouseAdapter(MouseAdapter ma){
+        listMapelCreate.addMouseListener(ma);
+
+        listMapelUpdate.addMouseListener(ma);
+        listUpdateKelasDaftarKelas.addMouseListener(ma);
+        
+        listDeleteMapelDaftarMapel.addMouseListener(ma);
+        listDeleteKelasDaftarKelas.addMouseListener(ma);
+        
+        listViewKelasDaftarKelas.addMouseListener(ma);
+        listViewMapelDaftarMapel1.addMouseListener(ma);
+        listViewMateriKelasDaftarKelas.addMouseListener(ma);
+        listViewSiswaDaftarSiswa.addMouseListener(ma);
+        listViewSiswaKelasTentorDaftarKelas.addMouseListener(ma);
+        listViewTentorDaftarTentor.addMouseListener(ma);
+        listCreateKelasMapel.addMouseListener(ma);
+        listCreateKelasTentor.addMouseListener(ma);
+    }
+////////panelAksiDeleteKelas
+    public void setListDeleteKelasDaftarKelas(String[] listKelasid) {
+        listDeleteKelasDaftarKelas.setListData(listKelasid);
     }
 
-    public JButton getBtnCreate() {
-        return btnCreate;
+    public JList getListDeleteKelasDaftarKelas() {
+        return listDeleteKelasDaftarKelas;
     }
 
-    public JButton getBtnCreateKelas() {
-        return btnCreateKelas;
-    }
-
-    public JButton getBtnCreateMapel() {
-        return btnCreateMapel;
-    }
-
-    public JButton getBtnCreateTentor() {
-        return btnCreateTentor;
-    }
-
-    public JButton getBtnDelete() {
-        return btnDelete;
-    }
-
-    public JButton getBtnDeleteKelas() {
-        return btnDeleteKelas;
-    }
-
-    public JButton getBtnDeleteMapel() {
-        return btnDeleteMapel;
-    }
-
-    public JButton getBtnUpdate() {
-        return btnUpdate;
-    }
-
-    public JButton getBtnUpdateKelas() {
-        return btnUpdateKelas;
-    }
-
-    public JButton getBtnUpdateMapel() {
-        return btnUpdateMapel;
-    }
-
-    public JButton getBtnView() {
-        return btnView;
-    }
-
-    public JButton getBtnViewKelas() {
-        return btnViewKelas;
-    }
-
-    public JButton getBtnViewKelasSiswaTentor() {
-        return btnViewKelasSiswaTentor;
-    }
-
-    public JButton getBtnViewMapel() {
-        return btnViewMapel;
-    }
-
-    public JButton getBtnViewMateriSetiapKelas() {
-        return btnViewMateriSetiapKelas;
-    }
-
-    public JButton getBtnViewSiswa() {
-        return btnViewSiswa;
-    }
-
-    public JButton getBtnViewTentor() {
-        return btnViewTentor;
-    }
-
-    public JButton getjBtnLogout() {
-        return btnLogout;
-    }
-
-    public JPanel getPanelChange() {
-        return panelChange;
-    }
-
-    public JPanel getPanelCreate() {
-        return panelCreate;
-    }
-
-    public JPanel getPanelDelete() {
-        return panelDelete;
-    }
-
-    public JPanel getPanelHeader() {
-        return panelHeader;
-    }
-
-    public JPanel getPanelMenu() {
-        return panelMenu;
-    }
-
-    public JPanel getPanelUpdate() {
-        return panelUpdate;
-    }
-
-    public JPanel getPanelView() {
-        return panelView;
+    public String getSelectedListDeleteKelasDaftarKelas() {
+        return listDeleteKelasDaftarKelas.getSelectedValue();
     }
     
+    public void setTaDeleteKelasDeskripsiKelasString(String s){
+        taDeleteKelasDeskripsiKelas.setText(s);
+}
     
+    public JButton getBtnAksiDeleteKelas() {
+        return btnAksiDeleteKelas;
+}
     
+////////////////////panelAksiDeleteMapel
+    public void setlistDeleteMapelDaftarMapel(String[] listMapel) {
+        listDeleteMapelDaftarMapel.setListData(listMapel);
+    }
+
+    public JList getListDeleteMapelDaftarMapel() {
+        return listDeleteMapelDaftarMapel;
+    }
+
+    public String getSelectedListDeleteMapelDaftarMapel() {
+        return listDeleteMapelDaftarMapel.getSelectedValue();
+    }
     
+    public void setTaDeleteMapelDeksripsiMapel(String s){
+        taDeleteMapelDeksripsiMapel.setText(s);
+}
     
+    public JButton getBtnAksiDeleteMapel() {
+        return btnAksiDeleteMapel;
+}
     
+//////////////////////panelAksiViewTentor
+    public void setListViewTentorDaftarTentor(String[] listKelasid) {
+        listViewTentorDaftarTentor.setListData(listKelasid);
+    }
+
+    public JList getListViewTentorDaftarTentor() {
+        return listViewTentorDaftarTentor;
+    }
+
+    public String getSelectedListViewTentorDaftarTentor() {
+        return listViewTentorDaftarTentor.getSelectedValue();
+    }
+
+    public void setTaViewTentorDetailTentorString(String s) {
+        taViewTentorDetailTentor.setText(s);
+    }
     
+////////////////panelAksiViewKelas
+    public void setListViewKelasDaftarKelas(String[] listKelasid) {
+        listViewKelasDaftarKelas.setListData(listKelasid);
+    }
+
+    public JList getListViewKelasDaftarKelas() {
+        return listViewKelasDaftarKelas;
+    }
+
+    public String getSelectedListViewKelasDaftarKelas() {
+        return listViewKelasDaftarKelas.getSelectedValue();
+    }
+
+    public void setTaViewKelasDeskripsiKelasString(String s) {
+        taViewKelasDeskripsiKelas.setText(s);
+    }
+////////////////panelAksiViewMapel
+    public void setListViewMapelDaftarMapel(String[] listMapel) {
+        listViewMapelDaftarMapel1.setListData(listMapel);
+    }
+
+    public JList getListViewMapelDaftarMapel() {
+        return listViewMapelDaftarMapel1;
+    }
+
+    public String getSelectedListViewMapelDaftarMapel() {
+        return listViewMapelDaftarMapel1.getSelectedValue();
+    }
+
+    public void setTaViewMapelDeskripsiMapelString(String s) {
+        taViewMapelDeskripsiMapel.setText(s);
+    }
+    
+///////////////////panelAksiViewSiswaKelasTentor
+    public void setListViewSiswaKelasTentorDaftarKelas(String[] listKelasid) {
+        listViewSiswaKelasTentorDaftarKelas.setListData(listKelasid);
+    }
+
+    public JList getListViewSiswaKelasTentorDaftarKelas() {
+        return listViewSiswaKelasTentorDaftarKelas;
+    }
+
+    public String getSelectedListViewSiswaKelasTentorDaftarKelas() {
+        return listViewSiswaKelasTentorDaftarKelas.getSelectedValue();
+    }
+
+    public void setTaViewSiswaKelasTentorDeskripsiKelasString(String s) {
+        taViewSiswaKelasTentorDeskripsiKelas.setText(s);
+    }
+////////////////////panelAksiViewMateriKelas
+    public void setListViewMateriKelasDaftarKelas(String[] listKelasid) {
+        listViewMateriKelasDaftarKelas.setListData(listKelasid);
+    }
+
+    public JList getListViewMateriKelasDaftarKelas() {
+        return listViewMateriKelasDaftarKelas;
+    }
+
+    public String getSelectedListViewMateriKelasDaftarKelas() {
+        return listViewMateriKelasDaftarKelas.getSelectedValue();
+    }
+
+    public void setTaViewMateriKelasDetailString(String s) {
+        taViewMateriKelasDetail.setText(s);
+    } 
+    
+/////////////////panelAksiViewSiswa
+    
+    public void setListViewSiswaDaftarSiswa(String[] listKelasid) {
+        listViewSiswaDaftarSiswa.setListData(listKelasid);
+    }
+
+    public JList getListViewSiswaDaftarSiswa() {
+        return listViewSiswaDaftarSiswa;
+    }
+
+    public String getSelectedListViewSiswaDaftarSiswa() {
+        return listViewSiswaDaftarSiswa.getSelectedValue();
+    }
+
+    public void setTaViewSiswaDetailSiswaString(String s) {
+        taViewSiswaDetailSiswa.setText(s);
+    } 
+
+//////////////panelAksiUpdateKelas
+    public void setListUpdateKelasDaftarKelas(String[] listKelasid) {
+        listUpdateKelasDaftarKelas.setListData(listKelasid);
+    }
+
+    public JList getListUpdateKelasDaftarKelas() {
+        return listUpdateKelasDaftarKelas;
+    }
+
+    public String getSelectedListUpdateKelasDaftarKelas() {
+        return listUpdateKelasDaftarKelas.getSelectedValue();
+    }
+
+    public void setTaDeskripsiKelasString(String s) {
+        taDeskripsiKelas.setText(s);
+    } 
+    public JButton getBtnUpdateKelasUpdate() {
+        return btnUpdateKelasUpdate;
+    }
+    public String getTfUpdateKelasNamaKelas(){
+        return tfUpdateKelasNamaKelas.getText();
+    }
+    
+    public void SetTfUpdateKelasMataPelajaran(String s){
+        tfUpdateKelasMataPelajaran.setText(s);
+    }
+     public void setTfUpdateKelasNamaKelas(String s){
+        tfUpdateKelasNamaKelas.setText(s);
+    }
+//////////////panelAksiUpdateMapel
+    public void setListMapelUpdate(String[] listKelasid) {
+        listMapelUpdate.setListData(listKelasid);
+    }
+
+    public JList getListMapelUpdate() {
+        return listMapelUpdate;
+    }
+
+    public String getSelectedListMapelUpdate() {
+        return listMapelUpdate.getSelectedValue();
+    }
+
+    public void setTaDeskripsiMapelUpdateString(String s) {
+        taDeskripsiMapelUpdate.setText(s);
+    } 
+    
+    public JButton getBtnUpdateMapel1() {
+        return btnUpdateMapel1;
+    }
+    
+    public String getTfUpdateMapelNama(){
+        return tfUpdateMapelNama.getText();
+    }    
+    
+    public int getTfUpdateBabMapel(){
+        return Integer.parseInt(tfUpdateBabMapel.getText());
+    } 
+    
+    public int getTfUpdateKkmMapel() {
+        return Integer.parseInt(tfUpdateKkmMapel.getText());
+    }
+    
+///////////////////panelAksiCreateMapel
+    public void setListMapelCreate (String[] listKelasid){
+        listMapelCreate.setListData(listKelasid);
+    }
+    public JList getListMapelCreate(){
+        return listMapelCreate;
+    }  
+    public String getSelectedListMapelCreate (){
+        return listMapelCreate.getSelectedValue();
+    }
+    public String getTfNamaMapelCreate(){
+        return tfNamaMapelCreate.getText();
+    }    
+    public int getTfJumlahBabCreate(){
+        return Integer.parseInt(tfJumlahBabCreate.getText());
+    } 
+    public int getTfKkmCreate(){
+        return Integer.parseInt(tfKkmCreate.getText());
+    } 
+    public void setTaDeskripsiMapelCreateString(String s){
+        taDeskripsiMapelCreate.setText(s);
+    }
+    public JButton getBtnDaftarMapel() {
+        return btnDaftarMapel;
+    }
+////////////////Create Tentor
+    
+    public JButton getBtnCreateTentorDaftar() {
+        return btnCreateTentorDaftar;
+    }
+    public String getTfCreateTentorNamaTentor(){
+        return tfCreateTentorNamaTentor.getText();
+    }
+///////////////// Create kelas
+    public void setListCreateKelasTentor(String[] listKelasid){
+        listCreateKelasTentor.setListData(listKelasid);
+    }
+    public JList getListCreateKelasTentor(){
+        return listCreateKelasTentor;
+    }  
+    public String getSelectedListCreateKelasTentor (){
+        return listCreateKelasTentor.getSelectedValue();
+    }
+    public void setListCreateKelasMapel(String[] listKelasid){
+        listCreateKelasMapel.setListData(listKelasid);
+    }
+    public JList getListCreateKelasMapel(){
+        return listCreateKelasMapel;
+    }  
+    public String getSelectedListCreateKelasMapel (){
+        return listCreateKelasMapel.getSelectedValue();
+    }
+    public String getTfCreatekelasNamaKelas(){
+        return tfCreateKelasNamaKelas.getText();
+    }
+    public JButton getBtnCreateKelasDaftar() {
+        return btnCreatekelasDaftar;
+    }
+////////// CREATE SISWA
+    public String getTfCreateSiswaNamaSiswa(){
+        return tfCreateSiswaNamaSiswa.getText();
+    }
+    public String getTfCreateSiswaJurusan(){
+        return tfCreateSiswaJurusan.getText();
+    }
+    public int getTfCreateSiswaTahunMasuk(){
+        return Integer.parseInt(tfCreateSiswaTahunMasuk.getText());
+    }
+    public JButton getBtnCreateSiswaDaftar() {
+        return btnCreateSiswaDaftar;
+    }
+
+  
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1554,7 +2310,12 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnCreateKelas;
     private javax.swing.JButton btnCreateMapel;
+    private javax.swing.JButton btnCreateSiswa;
+    private javax.swing.JButton btnCreateSiswaDaftar;
     private javax.swing.JButton btnCreateTentor;
+    private javax.swing.JButton btnCreateTentorDaftar;
+    private javax.swing.JButton btnCreatekelasDaftar;
+    private javax.swing.JButton btnDaftarMapel;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDeleteKelas;
     private javax.swing.JButton btnDeleteMapel;
@@ -1563,6 +2324,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JButton btnUpdateKelas;
     private javax.swing.JButton btnUpdateKelasUpdate;
     private javax.swing.JButton btnUpdateMapel;
+    private javax.swing.JButton btnUpdateMapel1;
     private javax.swing.JButton btnView;
     private javax.swing.JButton btnViewKelas;
     private javax.swing.JButton btnViewKelasSiswaTentor;
@@ -1597,6 +2359,7 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -1605,11 +2368,31 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -1623,23 +2406,38 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JLabel labelStatusUpdate;
+    private javax.swing.JLabel labelStatusDeleteKelas;
+    private javax.swing.JLabel labelStatusDeleteMapel;
     private javax.swing.JLabel labelStatusUpdateKelas;
+    private javax.swing.JLabel labelStatusUpdateMapel;
+    private javax.swing.JList<String> listCreateKelasMapel;
+    private javax.swing.JList<String> listCreateKelasTentor;
     private javax.swing.JList<String> listDeleteKelasDaftarKelas;
     private javax.swing.JList<String> listDeleteMapelDaftarMapel;
+    private javax.swing.JList<String> listMapelCreate;
+    private javax.swing.JList<String> listMapelUpdate;
     private javax.swing.JList<String> listUpdateKelasDaftarKelas;
-    private javax.swing.JList<String> listUpdateMapelDaftarMapel;
     private javax.swing.JList<String> listViewKelasDaftarKelas;
-    private javax.swing.JList<String> listViewMapelDaftarMapel;
+    private javax.swing.JList<String> listViewMapelDaftarMapel1;
     private javax.swing.JList<String> listViewMateriKelasDaftarKelas;
     private javax.swing.JList<String> listViewSiswaDaftarSiswa;
     private javax.swing.JList<String> listViewSiswaKelasTentorDaftarKelas;
     private javax.swing.JList<String> listViewTentorDaftarTentor;
+    private javax.swing.JPanel panelAksiCreateKelas;
+    private javax.swing.JPanel panelAksiCreateMapel;
+    private javax.swing.JPanel panelAksiCreateSiswa;
+    private javax.swing.JPanel panelAksiCreateTentor;
     private javax.swing.JPanel panelAksiDeleteKelas;
     private javax.swing.JPanel panelAksiDeleteMapel;
     private javax.swing.JPanel panelAksiUpdateKelas;
@@ -1661,16 +2459,27 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JPanel panelView;
     private javax.swing.JTextArea taDeleteKelasDeskripsiKelas;
     private javax.swing.JTextArea taDeleteMapelDeksripsiMapel;
+    private javax.swing.JTextArea taDeskripsiKelas;
+    private javax.swing.JTextArea taDeskripsiMapelCreate;
+    private javax.swing.JTextArea taDeskripsiMapelUpdate;
     private javax.swing.JTextArea taViewKelasDeskripsiKelas;
     private javax.swing.JTextArea taViewMapelDeskripsiMapel;
     private javax.swing.JTextArea taViewMateriKelasDetail;
-    private javax.swing.JTextArea taViewSiswaDetailSIswa;
+    private javax.swing.JTextArea taViewSiswaDetailSiswa;
     private javax.swing.JTextArea taViewSiswaKelasTentorDeskripsiKelas;
     private javax.swing.JTextArea taViewTentorDetailTentor;
-    private javax.swing.JTextField tfJumlahBabUpdateMapel;
-    private javax.swing.JTextField tfKkmUpdateMapel;
-    private javax.swing.JTextField tfNamaMapelUpdateMapel;
+    private javax.swing.JTextField tfCreateKelasNamaKelas;
+    private javax.swing.JTextField tfCreateSiswaJurusan;
+    private javax.swing.JTextField tfCreateSiswaNamaSiswa;
+    private javax.swing.JTextField tfCreateSiswaTahunMasuk;
+    private javax.swing.JTextField tfCreateTentorNamaTentor;
+    private javax.swing.JTextField tfJumlahBabCreate;
+    private javax.swing.JTextField tfKkmCreate;
+    private javax.swing.JTextField tfNamaMapelCreate;
+    private javax.swing.JTextField tfUpdateBabMapel;
     private javax.swing.JTextField tfUpdateKelasMataPelajaran;
     private javax.swing.JTextField tfUpdateKelasNamaKelas;
+    private javax.swing.JTextField tfUpdateKkmMapel;
+    private javax.swing.JTextField tfUpdateMapelNama;
     // End of variables declaration//GEN-END:variables
 }

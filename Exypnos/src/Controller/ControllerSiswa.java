@@ -6,7 +6,7 @@
 package Controller;
 
 import Exypnos.Aplikasi;
-import Exypnos.GUI_Siswa;
+import View.GUI_Siswa;
 import Exypnos.Kelas;
 import Exypnos.MataPelajaran;
 import Exypnos.Siswa;
@@ -25,13 +25,13 @@ import java.awt.event.MouseEvent;
  */
 
 public class ControllerSiswa extends MouseAdapter implements ActionListener{
-    GUI_Siswa menu;
+    GUI_Siswa viewSiswa;
     Aplikasi model;
     Siswa user;
 
     public ControllerSiswa() {
         
-        menu = new GUI_Siswa();
+        viewSiswa = new GUI_Siswa();
         model = new Aplikasi();
         //////////////////////////////////////////////////
         model.inputSiswa("Daffa Haris", "Ipa", 2015);
@@ -112,44 +112,44 @@ public class ControllerSiswa extends MouseAdapter implements ActionListener{
             model.inputMateriToKelas(k2, materi, jmlBahasan);
         }
         /////////////////////////////////////////////
-        menu.addActionListener(this);
-        menu.addMouseAdapter(this);
-        menu.setVisible(true);
-        menu.setDate();
-        menu.setWelcome(user.getNamaSiswa());
-        menu.setDataPribadi(model.toStringSiswa(user.getId()));
-        menu.setListKelas(model.getKelasListId());
+        viewSiswa.addActionListener(this);
+        viewSiswa.addMouseAdapter(this);
+        viewSiswa.setVisible(true);
+        viewSiswa.setDate();
+        viewSiswa.setWelcome(user.getNamaSiswa());
+        viewSiswa.setDataPribadi(model.toStringSiswa(user.getId()));
+        viewSiswa.setListKelas(model.getKelasListId());
     }
     public void actionPerformed(ActionEvent ae){
         Object source = ae.getSource();
-        if (source.equals(menu.getBtnRegis())){
-            String id = menu.getSelectedKelas();
+        if (source.equals(viewSiswa.getBtnRegis())){
+            String id = viewSiswa.getSelectedKelas();
             Kelas kelas = model.searchKelas(id);
             model.inputSiswaToKelas(user, kelas);
-            menu.setStatusRegis("*Regisrasi Berhasil");
-            menu.setListKelasView(model.getKelasListSiswa(user.getId()));
-            menu.setListMateri(model.getKelasListSiswa(user.getId()));
-        } else if (source.equals(menu.getBtnUpdate())){
-            String nama = menu.getNama();
-            String jurusan = menu.getJurusan();
-            int tahunMasuk = menu.getTahunMasuk();
+            viewSiswa.setStatusRegis("*Regisrasi Berhasil");
+            viewSiswa.setListKelasView(model.getKelasListSiswa(user.getId()));
+            viewSiswa.setListMateri(model.getKelasListSiswa(user.getId()));
+        } else if (source.equals(viewSiswa.getBtnUpdate())){
+            String nama = viewSiswa.getNama();
+            String jurusan = viewSiswa.getJurusan();
+            int tahunMasuk = viewSiswa.getTahunMasuk();
             model.updateSiswa(user.getIdSiswa(), nama, jurusan, tahunMasuk);
-            menu.setDataPribadi(model.toStringSiswa(user.getId()));
-            menu.setWelcome(user.getNamaSiswa());
+            viewSiswa.setDataPribadi(model.toStringSiswa(user.getId()));
+            viewSiswa.setWelcome(user.getNamaSiswa());
         }
         
     }
     public void mousePressed(MouseEvent me){
         Object source = me.getSource();
-        if (source.equals(menu.getListKelas())){
-            String id = menu.getSelectedKelas();
-            menu.setKelasString(model.toStringkelas(id));
-        } else if (source.equals(menu.getListKelasView())){
-            String id1 = menu.getSelectedKelasView();
-            menu.setKelasStringView(model.toStringkelas(id1));
-        } else if (source.equals(menu.getListMateri())){
-            String id2 = menu.getSelectedMateri();
-            menu.setMateriString(model.toStringMateri(id2));
+        if (source.equals(viewSiswa.getListKelas())){
+            String id = viewSiswa.getSelectedKelas();
+            viewSiswa.setKelasString(model.toStringkelas(id));
+        } else if (source.equals(viewSiswa.getListKelasView())){
+            String id1 = viewSiswa.getSelectedKelasView();
+            viewSiswa.setKelasStringView(model.toStringkelas(id1));
+        } else if (source.equals(viewSiswa.getListMateri())){
+            String id2 = viewSiswa.getSelectedMateri();
+            viewSiswa.setMateriString(model.toStringMateri(id2));
         }
     }
     

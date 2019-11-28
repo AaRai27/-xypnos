@@ -18,8 +18,7 @@ public class Kelas {
     private List<Materi> listMateri;
     private MataPelajaran mapel;
     private Materi materi;
-//    private int numOfSiswa = 0;
-//    private int numOfMateri = 0;
+    
 
     public Kelas(MataPelajaran mapel, String namaKelas) {
         setNamaKelas(namaKelas);
