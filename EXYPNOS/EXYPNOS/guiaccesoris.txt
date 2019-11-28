@@ -1,0 +1,7 @@
+lcdmono2
+Microsoft JhengHei
+color1 2c7873 (gelap)
+color2 6fb98f (terang)
+color textArea cafce0
+
+c2e8ce text
