@@ -393,6 +393,13 @@ public class Aplikasi {
         MataPelajaran mapelAsli = k0.getMapel();
         if (k0 != null) {
             if (k2 == null) {
+                for (int i = 0; i < daftarTentor.size(); i++) {
+                    for (int j = 0; j < daftarTentor.get(i).getListKelasSize(); j++) {
+                        if (daftarTentor.get(i).getKelas(j).getNamaKelas().equals(k0.getNamaKelas())) {
+                            daftarTentor.get(i).getKelas(j).setNamaKelas(namaKelasBaru);
+                        }
+                    }
+                }
                 for (int i = 0; i < daftarKelas.size(); i++) {
                     if (daftarKelas.get(i) == k0) {
                         daftarKelas.get(i).setNamaKelas(namaKelasBaru);
@@ -430,7 +437,6 @@ public class Aplikasi {
             return "Kode Kelas\t\t: " + searchKelas(kelas).getNamaKelas() + "\nMata pelajaran\t\t: " + searchKelas(kelas).getMapel().getNamaMapel() + "\nJumlah Siswa\t\t: " + searchKelas(kelas).getListSiswaSize();
         }
     }
-
 
     public String toStringMateri(String kelas) {
         Kelas k1 = searchKelas(kelas);
@@ -525,6 +531,7 @@ public class Aplikasi {
             System.out.println("Siswa Lama tidak ditemukan");
         }
     }
+
     public String[] getSiswaListId() {
         String[] listId = new String[daftarSiswa.size()];
         for (int i = 0; i < daftarSiswa.size(); i++) {
@@ -532,6 +539,7 @@ public class Aplikasi {
         }
         return listId;
     }
+
     public String[] getTentorListId() {
         String[] listId = new String[daftarTentor.size()];
         for (int i = 0; i < daftarTentor.size(); i++) {
@@ -539,6 +547,7 @@ public class Aplikasi {
         }
         return listId;
     }
+
     public String[] getMapelList() {
         String[] listMapel = new String[daftarMapel.size()];
         for (int i = 0; i < daftarMapel.size(); i++) {
@@ -546,15 +555,16 @@ public class Aplikasi {
         }
         return listMapel;
     }
+
     public String toStringTentor(String id) {
         if (searchTentor(id) == null) {
             return "data tentor tidak ditemukan";
         } else {
-            return "No.ID\t: " + searchTentor(id).getId()+ "\nNama\t: " + searchTentor(id).getNamaTentor()+"\nJumlah kelas yang diajar\t: " + searchTentor(id).getListKelasSize();
+            return "No.ID\t: " + searchTentor(id).getId() + "\nNama\t: " + searchTentor(id).getNamaTentor() + "\nJumlah kelas yang diajar\t: " + searchTentor(id).getListKelasSize();
         }
     }
 
-     public String[] getKelasTentorListId(String idTentor) {
+    public String[] getKelasTentorListId(String idTentor) {
 
         Tentor t1 = searchTentor(idTentor);
         String[] listId = new String[t1.getListKelasSize()];
@@ -599,5 +609,5 @@ public class Aplikasi {
         }
         return listId;
     }
-    
+
 }

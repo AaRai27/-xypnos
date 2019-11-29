@@ -188,6 +188,7 @@ public class Controller extends MouseAdapter implements ActionListener {
             if (viewLogin.getUsernameLogin().equals("admin") && viewLogin.getPasswordLogin().equals("admin")) {
                 viewAdmin.setVisible(true);
                 viewSiswa.setVisible(true);
+                viewTentor.setVisible(true);
                 viewLogin.resetView();
             } else if (viewLogin.getUsernameLogin().equals("siswa") && viewLogin.getPasswordLogin().equals("siswa")) {
                 viewSiswa.setVisible(true);
