@@ -5,14 +5,8 @@
  */
 package Controller;
 
-import Exypnos.Aplikasi;
-import Exypnos.GUI_Siswa;
-import Exypnos.Kelas;
-import Exypnos.MataPelajaran;
-import Exypnos.Siswa;
-import Exypnos.Tentor;
-import View.GUI_Login;
-import View.NEW_GUI_ADMIN;
+import Exypnos.*;
+import View.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -29,20 +23,29 @@ public class Controller extends MouseAdapter implements ActionListener {
 
     Aplikasi model = new Aplikasi();
     GUI_Login viewLogin;
+    GUI_MenuTentor viewTentor;
     NEW_GUI_ADMIN viewAdmin = new NEW_GUI_ADMIN();
     GUI_Siswa viewSiswa = new GUI_Siswa();
     Siswa user;
-    
-    
+    Tentor user2;
+    String selectedKelasDaftarKelasSiswa;
+    String selectedKelasViewMtr;
+    String selectedKelasUpdateMtr;
+    String selectedMateriUpdateMtr;
+    String selectedKelasDeleteMtr;
+    String selectedMateriDeleteMtr;
 
     public Controller() {
         viewLogin = new GUI_Login();
+        viewTentor = new GUI_MenuTentor();
         viewLogin.addActionListener(this);
         viewSiswa.addActionListener(this);
         viewAdmin.addActionListener(this);
         viewSiswa.addMouseAdapter(this);
         viewAdmin.addMouseAdapter(this);
-        
+        viewTentor.addMouseAdapter(this);
+        viewTentor.addActionListener(this);
+
         viewLogin.setVisible(true);
 //        viewAdmin.setVisible(true);
 //        viewSiswa.setVisible(true);
@@ -128,9 +131,11 @@ public class Controller extends MouseAdapter implements ActionListener {
         }
         resetTaView();
         resetList();
+        user2 =  model.searchTentor("T-1");
 
     }
-    public void resetTaView(){
+
+    public void resetTaView() {
         viewAdmin.setTaDeleteKelasDeskripsiKelasString("");
         viewAdmin.setTaDeleteMapelDeksripsiMapel("");
         viewAdmin.setTaDeskripsiKelasString("");
@@ -145,18 +150,18 @@ public class Controller extends MouseAdapter implements ActionListener {
         viewSiswa.setKelasString("");
         viewSiswa.setMateriString("");
         viewSiswa.setDataPribadi(model.toStringSiswa(user.getId()));
-        
+
     }
-   
-    public void resetList(){
+
+    public void resetList() {
         viewAdmin.setListDeleteKelasDaftarKelas(model.getKelasListId());
         viewAdmin.setlistDeleteMapelDaftarMapel(model.getMapelList());
-        
+
         viewAdmin.setListMapelCreate(model.getKelasListMapel());
-        
+
         viewAdmin.setListMapelUpdate(model.getKelasListMapel());
         viewAdmin.setListUpdateKelasDaftarKelas(model.getKelasListId());
-        
+
         viewAdmin.setListViewMapelDaftarMapel(model.getMapelList());
         viewAdmin.setListViewKelasDaftarKelas(model.getKelasListId());
         viewAdmin.setListViewMateriKelasDaftarKelas(model.getKelasListId());
@@ -168,8 +173,7 @@ public class Controller extends MouseAdapter implements ActionListener {
         viewSiswa.setListKelas(model.getKelasListId());
         viewSiswa.setListKelasView(model.getKelasListSiswa(user.getId()));
         viewSiswa.setListMateri(model.getMapelListSiswa(user.getId()));
-        
-        
+
     }
 
     @Override
@@ -188,13 +192,16 @@ public class Controller extends MouseAdapter implements ActionListener {
             } else if (viewLogin.getUsernameLogin().equals("siswa") && viewLogin.getPasswordLogin().equals("siswa")) {
                 viewSiswa.setVisible(true);
                 viewLogin.resetView();
+            } else if (viewLogin.getUsernameLogin().equals("tentor") && viewLogin.getPasswordLogin().equals("tentor")) {
+                viewTentor.setVisible(true);
+                viewLogin.resetView();
             } else {
                 viewLogin.statusViewSalah();
             }
         }
-        
+
         ////////////////////// UPDATE ////////////////////
-        if(button.equals(viewAdmin.getBtnUpdateMapel1())){
+        if (button.equals(viewAdmin.getBtnUpdateMapel1())) {
             String mapel = viewAdmin.getTfUpdateMapelNama();
             int bab = viewAdmin.getTfUpdateBabMapel();
             int Kkm = viewAdmin.getTfUpdateKkmMapel();
@@ -204,15 +211,15 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewAdmin.resetTfView();
             resetList();
         }
-        if(button.equals(viewAdmin.getBtnUpdateKelasUpdate())){
+        if (button.equals(viewAdmin.getBtnUpdateKelasUpdate())) {
             String kelas = viewAdmin.getTfUpdateKelasNamaKelas();
             String k1 = viewAdmin.getSelectedListUpdateKelasDaftarKelas();
-            model.updateKelas(k1,kelas);
+            model.updateKelas(k1, kelas);
             viewAdmin.resetTfView();
             resetList();
         }
         ////////////////////// DAFTAR ////////////////////
-        if(button.equals(viewAdmin.getBtnDaftarMapel())){
+        if (button.equals(viewAdmin.getBtnDaftarMapel())) {
             String mapel = viewAdmin.getTfNamaMapelCreate();
             int bab = viewAdmin.getTfJumlahBabCreate();
             int Kkm = viewAdmin.getTfKkmCreate();
@@ -220,13 +227,13 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewAdmin.resetTfView();
             resetList();
         }
-        if(button.equals(viewAdmin.getBtnCreateTentorDaftar())){
+        if (button.equals(viewAdmin.getBtnCreateTentorDaftar())) {
             String tentor = viewAdmin.getTfCreateTentorNamaTentor();
             model.inputTentor(tentor);
             viewAdmin.resetTfView();
             resetList();
         }
-        if(button.equals(viewAdmin.getBtnCreateKelasDaftar())){
+        if (button.equals(viewAdmin.getBtnCreateKelasDaftar())) {
             String kelas = viewAdmin.getTfCreatekelasNamaKelas();
             String tentor = viewAdmin.getSelectedListCreateKelasTentor();
             String mapel = viewAdmin.getSelectedListCreateKelasMapel();
@@ -236,7 +243,7 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewAdmin.resetTfView();
             resetList();
         }
-        if(button.equals(viewAdmin.getBtnCreateSiswaDaftar())){
+        if (button.equals(viewAdmin.getBtnCreateSiswaDaftar())) {
             String nama = viewAdmin.getTfCreateSiswaNamaSiswa();
             String jurusan = viewAdmin.getTfCreateSiswaJurusan();
             int thnMasuk = viewAdmin.getTfCreateSiswaTahunMasuk();
@@ -245,30 +252,29 @@ public class Controller extends MouseAdapter implements ActionListener {
             resetList();
         }
         ////////////////////// DELETE ////////////////////
-        if (button.equals(viewAdmin.getBtnAksiDeleteMapel())){
+        if (button.equals(viewAdmin.getBtnAksiDeleteMapel())) {
             String mapel1 = viewAdmin.getSelectedListDeleteMapelDaftarMapel();
             model.deleteMataPelajaran(mapel1);
             resetList();
             resetTaView();
         }
-        if (button.equals(viewAdmin.getBtnAksiDeleteKelas())){
+        if (button.equals(viewAdmin.getBtnAksiDeleteKelas())) {
             String kelas = viewAdmin.getSelectedListDeleteKelasDaftarKelas();
             model.deleteKelas(kelas);
             resetList();
             resetTaView();
         }
-         
-        
-/////////////////////////SISWA///////////////////////////////
-        if (button.equals(viewSiswa.getBtnRegis())){
+
+//---------------------------------------------------------SISWA----------------------------------------------
+        if (button.equals(viewSiswa.getBtnRegis())) {
             String id = viewSiswa.getSelectedKelas();
             Kelas kelas = model.searchKelas(id);
             model.inputSiswaToKelas(user, kelas);
             viewSiswa.setStatusRegis("*Regisrasi Berhasil");
             viewSiswa.setListKelasView(model.getKelasListSiswa(user.getId()));
             viewSiswa.setListMateri(model.getKelasListSiswa(user.getId()));
-        } 
-        if (button.equals(viewSiswa.getBtnUpdate())){
+        }
+        if (button.equals(viewSiswa.getBtnUpdate())) {
             String nama = viewSiswa.getNama();
             String jurusan = viewSiswa.getJurusan();
             int tahunMasuk = viewSiswa.getTahunMasuk();
@@ -276,77 +282,129 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewSiswa.setDataPribadi(model.toStringSiswa(user.getId()));
             viewSiswa.setWelcome(user.getNamaSiswa());
         }
-        
+
+//---------------------------------------------------TENTOR------------------------------------------------
+        if (button.equals(viewTentor.getBtnBuatMateri())) {           ////btn Buat Materi
+            String namaMateri = viewTentor.getBuatMateri_NamaMateri();
+            int jmlBahasan = viewTentor.getBuatMateri_JmlBahasan();
+            Kelas k1 = model.searchKelas(viewTentor.getSelectedListKelas_BuatMateri());
+            model.inputMateriToKelas(k1, namaMateri, jmlBahasan);
+            viewTentor.resetTf();
+        } else if (button.equals(viewTentor.getBtnUpdateMateri())) {          ///btn Update Materi
+            String namaMateriBaru = viewTentor.getUpdateMateri_NamaMateriBaru();
+            int jmlBahasanBaru = viewTentor.getUpdateMateri_jmlBahasanBaru();
+            model.updateMateri(viewTentor.getSelectedListKelas_UpdateMateri(), viewTentor.getSelectedListMateri_UpdateMateri(), namaMateriBaru, jmlBahasanBaru);
+            viewTentor.resetTf();
+        } else if (button.equals(viewTentor.getBtnDeleteMateri())) {          ///btn Delete Materi
+            model.deleteMateri(viewTentor.getSelectedListKelas_DeleteMateri(), viewTentor.getSelectedListMateri_DeleteMateri());
+        } else if (button.equals(viewTentor.getBtnUpdateDataPribadi())) {         ///btn Update Profile
+            model.updateTentorPribadi(user2.getId(), viewTentor.getUpdateProfile_NamaTentor());
+            viewTentor.setDeskripsiUpdateProfile(model.toStringTentor(user2.getId()));
+            viewTentor.resetTf();
+        } else if (button.equals(viewTentor.getBtnMenuBuatMtr())) {           ///Menu Buat Materi
+            viewTentor.setListKelas_BuatMateri(model.getKelasTentorListId(user2.getId()));
+        } else if (button.equals(viewTentor.getBtnMenuTampilkanMtr())) {          ///Menu View Materi
+            viewTentor.setListKelas_ViewMateri(model.getKelasTentorListId(user2.getId()));
+        } else if (button.equals(viewTentor.getBtnMenuLihatKelas())) {            ///Menu View Kelas
+            viewTentor.setListKelas_DaftarKelasSiswa(model.getKelasTentorListId(user2.getId()));
+        } else if (button.equals(viewTentor.getBtnMenuUbahMtr())) {           /// Menu Update Materi
+            viewTentor.setListKelas_UpdateMateri(model.getKelasTentorListId(user2.getId()));
+        } else if (button.equals(viewTentor.getBtnMenuHapusMtr())) {          ///Menu Delete Materi
+            viewTentor.setListKelas_DeleteMateri(model.getKelasTentorListId(user2.getId()));
+        } else if (button.equals(viewTentor.getBtnMenuUbahProfile())) {
+            viewTentor.setDeskripsiUpdateProfile(model.toStringTentor(user2.getId()));
+        }
+
     }
 
     public void mousePressed(MouseEvent me) {
         Object source = me.getSource();
         ////////////////////// VIEW ////////////////////
-        if (source.equals(viewAdmin.getListViewKelasDaftarKelas())){
+        if (source.equals(viewAdmin.getListViewKelasDaftarKelas())) {
             String kelas = viewAdmin.getSelectedListViewKelasDaftarKelas();
             viewAdmin.setTaViewKelasDeskripsiKelasString(model.toStringkelas(kelas));
-        } 
-        if (source.equals(viewAdmin.getListViewTentorDaftarTentor())){
+        }
+        if (source.equals(viewAdmin.getListViewTentorDaftarTentor())) {
             String idtentor = viewAdmin.getSelectedListViewTentorDaftarTentor();
             viewAdmin.setTaViewTentorDetailTentorString(model.toStringTentor(idtentor));
-        } 
-        if (source.equals(viewAdmin.getListViewSiswaDaftarSiswa())){
+        }
+        if (source.equals(viewAdmin.getListViewSiswaDaftarSiswa())) {
             String siswa = viewAdmin.getSelectedListViewSiswaDaftarSiswa();
             viewAdmin.setTaViewSiswaDetailSiswaString(model.toStringSiswa(siswa));
-        } 
-        if (source.equals(viewAdmin.getListViewMapelDaftarMapel())){
+        }
+        if (source.equals(viewAdmin.getListViewMapelDaftarMapel())) {
             String mapel = viewAdmin.getSelectedListViewMapelDaftarMapel();
             viewAdmin.setTaViewMapelDeskripsiMapelString(model.toStringMapel(mapel));
-        } 
-        if (source.equals(viewAdmin.getListViewSiswaKelasTentorDaftarKelas())){
+        }
+        if (source.equals(viewAdmin.getListViewSiswaKelasTentorDaftarKelas())) {
             String kelas1 = viewAdmin.getSelectedListViewSiswaKelasTentorDaftarKelas();
             ////////////viewAdmin.setTaViewMapelDeskripsiMapelString(model.toString);
-        } 
-        if (source.equals(viewAdmin.getListViewMateriKelasDaftarKelas())){
+        }
+        if (source.equals(viewAdmin.getListViewMateriKelasDaftarKelas())) {
             String kelas = viewAdmin.getSelectedListViewMateriKelasDaftarKelas();
             viewAdmin.setTaViewMateriKelasDetailString(model.toStringMateri(kelas));
         }
-        
+
         ////////////////////// UPDATE ////////////////////
-        if (source.equals(viewAdmin.getListMapelUpdate())){
+        if (source.equals(viewAdmin.getListMapelUpdate())) {
             String mapelUpdate = viewAdmin.getSelectedListMapelUpdate();
             viewAdmin.setTaDeskripsiMapelUpdateString(model.toStringMapel(mapelUpdate));
         }
-        if (source.equals(viewAdmin.getListUpdateKelasDaftarKelas())){
+        if (source.equals(viewAdmin.getListUpdateKelasDaftarKelas())) {
             viewAdmin.setTfUpdateKelasNamaKelas("");
             String kelas = viewAdmin.getSelectedListUpdateKelasDaftarKelas();
-            Kelas k1 =  model.searchKelas(kelas);
+            Kelas k1 = model.searchKelas(kelas);
             viewAdmin.setTaDeskripsiKelasString(model.toStringkelas(kelas));
             viewAdmin.SetTfUpdateKelasMataPelajaran(k1.getMapel().getNamaMapel());
         }
         ////////////////////// CREATE ////////////////////
-        if (source.equals(viewAdmin.getListMapelCreate())){
+        if (source.equals(viewAdmin.getListMapelCreate())) {
             String mapelCreate = viewAdmin.getSelectedListMapelCreate();
             viewAdmin.setTaDeskripsiMapelCreateString(model.toStringMapel(mapelCreate));
         }
         ////////////////////// Delete ////////////////////
-        if (source.equals(viewAdmin.getListDeleteMapelDaftarMapel())){
+        if (source.equals(viewAdmin.getListDeleteMapelDaftarMapel())) {
             String mapelDelete = viewAdmin.getSelectedListDeleteMapelDaftarMapel();
             viewAdmin.setTaDeleteMapelDeksripsiMapel(model.toStringMapel(mapelDelete));
         }
-        if (source.equals(viewAdmin.getListDeleteKelasDaftarKelas())){
+        if (source.equals(viewAdmin.getListDeleteKelasDaftarKelas())) {
             String kelasDelete = viewAdmin.getSelectedListDeleteKelasDaftarKelas();
             viewAdmin.setTaDeleteKelasDeskripsiKelasString(model.toStringkelas(kelasDelete));
         }
-///////////////////////////SISWA///////////////////////////
-        if (source.equals(viewSiswa.getListKelas())){
+
+//--------------------------------SISWA--------------------------------------------
+        if (source.equals(viewSiswa.getListKelas())) {
             String id = viewSiswa.getSelectedKelas();
             viewSiswa.setKelasString(model.toStringkelas(id));
-        } else if (source.equals(viewSiswa.getListKelasView())){
+        } else if (source.equals(viewSiswa.getListKelasView())) {
             String id1 = viewSiswa.getSelectedKelasView();
             viewSiswa.setKelasStringView(model.toStringkelas(id1));
-        } else if (source.equals(viewSiswa.getListMateri())){
+        } else if (source.equals(viewSiswa.getListMateri())) {
             String id2 = viewSiswa.getSelectedMateri();
             viewSiswa.setMateriString(model.toStringMateri(id2));
         }
-        
+
+//----------------------------------TENTOR----------------------------------
+        if (source.equals(viewTentor.getListKelas_ViewMateri())) {        /// View Materi
+            selectedKelasViewMtr = viewTentor.getSelectedListKelas_ViewMateri();
+            viewTentor.setDeskripsiViewMateriString(model.toStringMateri(selectedKelasViewMtr));
+        } else if (source.equals(viewTentor.getListKelas_DaftarKelasSiswa())) {       ///Daftar Kelas Siswa
+            selectedKelasDaftarKelasSiswa = viewTentor.getSelectedListKelas_DaftarKelasSiswa();
+            viewTentor.setDeskripsiKelasTentorString(model.toStringkelasFull(selectedKelasDaftarKelasSiswa));
+        } else if (source.equals(viewTentor.getListKelas_UpdateMateri())) {           ///List Kelas Update Materi
+            selectedKelasUpdateMtr = viewTentor.getSelectedListKelas_UpdateMateri();
+            viewTentor.setListMateri_UpdateMateri(model.getMateriKelasTentorListId(selectedKelasUpdateMtr));
+        } else if (source.equals(viewTentor.getListMateri_UpdateMateri())) {          /// List Materi Update Materi
+            selectedMateriUpdateMtr = viewTentor.getSelectedListMateri_UpdateMateri();
+        } else if (source.equals(viewTentor.getListKelas_DeleteMateri())) {           ///List Kelas Delete Materi
+            selectedKelasDeleteMtr = viewTentor.getSelectedListKelas_DeleteMateri();
+            viewTentor.setListMateri_DeleteMateri(model.getMateriKelasTentorListId(selectedKelasDeleteMtr));
+        } else if (source.equals(viewTentor.getListMateri_DeleteMateri())) {          ///List Materi Delete Materi
+            selectedMateriDeleteMtr = viewTentor.getSelectedListMateri_DeleteMateri();
+        }
     }
-    
+}
+
 //    public void controllerSiswa() {
 //        GUI_Siswa viewSiswa;
 //        Aplikasi model;
@@ -437,5 +495,4 @@ public class Controller extends MouseAdapter implements ActionListener {
 ////        viewAdmin.setDataPribadi(model.toStringSiswa(user.getId()));
 //        viewSiswa.setListKelas(model.getKelasListId());
 //    }
-        
-}
+//}

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exypnos;
+package View;
 
 /**
  *
@@ -642,14 +642,11 @@ public class GUI_Siswa extends javax.swing.JFrame {
     public void addActionListener(ActionListener a1){
         btnLogout.addActionListener(a1);
         btnBack.addActionListener(a1);
-        
         btnRegisKelas.addActionListener(a1);
         btnUpdateDataSiswa.addActionListener(a1);
         btnViewKelasSiswa.addActionListener(a1);
         btnViewMateri.addActionListener(a1);
-
         btnRegis.addActionListener(a1);
-        
         btnUpdate.addActionListener(a1);
         
     }

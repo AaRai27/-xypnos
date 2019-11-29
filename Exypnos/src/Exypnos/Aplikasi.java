@@ -554,4 +554,50 @@ public class Aplikasi {
         }
     }
 
+     public String[] getKelasTentorListId(String idTentor) {
+
+        Tentor t1 = searchTentor(idTentor);
+        String[] listId = new String[t1.getListKelasSize()];
+        for (int i = 0; i < t1.getListKelasSize(); i++) {
+            if (t1 != null) {
+                listId[i] = t1.getKelas(i).getNamaKelas();
+            }
+
+        }
+        return listId;
+    }
+
+    public String toStringkelasFull(String kelas) {
+        String text;
+        if (searchKelas(kelas) == null) {
+            text = "data Kelas tidak ditemukan";
+        } else {
+            text = "Kode Kelas\t\t: " + searchKelas(kelas).getNamaKelas() + "\nMata pelajaran\t\t: " + searchKelas(kelas).getMapel().getNamaMapel() + "\nJumlah Siswa\t\t: " + searchKelas(kelas).getListSiswaSize();
+            text = text + "\n================================";
+            text = text + "\nMateri\t\t: ";
+            for (int i = 0; i < searchKelas(kelas).getListMateriSize(); i++) {
+                text = text + "\nNama Materi\t:" + searchKelas(kelas).getMateri(i).getNamaMateri();
+                text = text + "\nJumlah Bahasan\t:" + searchKelas(kelas).getMateri(i).getJmlBahasan();
+            }
+            text = text + "\n================================";
+            text = text + "\nNama Siswa Pada Kelas " + kelas + " : ";
+            for (int i = 0; i < searchKelas(kelas).getListSiswaSize(); i++) {
+                text = text + "No.ID\t: " + searchKelas(kelas).getSiswa(i).getIdSiswa() + "\nNama\t: " + searchKelas(kelas).getSiswa(i).getNamaSiswa() + "\nJurusan\t: " + searchKelas(kelas).getSiswa(i).getJurusan() + "\nTahun Masuk\t: " + searchKelas(kelas).getSiswa(i).getTahunMasuk();
+            }
+        }
+        return text;
+    }
+
+    public String[] getMateriKelasTentorListId(String kelas) {
+        Kelas k1 = searchKelas(kelas);
+        String[] listId = new String[k1.getListMateriSize()];
+        if (k1 != null) {
+            for (int i = 0; i < k1.getListMateriSize(); i++) {
+
+                listId[i] = k1.getMateri(i).getNamaMateri();
+            }
+        }
+        return listId;
+    }
+    
 }
