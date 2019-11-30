@@ -26,8 +26,8 @@ public class Controller extends MouseAdapter implements ActionListener {
     GUI_MenuTentor viewTentor;
     NEW_GUI_ADMIN viewAdmin = new NEW_GUI_ADMIN();
     GUI_Siswa viewSiswa = new GUI_Siswa();
-    Siswa user;
-    Tentor user2;
+    Siswa userSiswa;
+    Tentor userTentor;
     String selectedKelasDaftarKelasSiswa;
     String selectedKelasViewMtr;
     String selectedKelasUpdateMtr;
@@ -51,88 +51,7 @@ public class Controller extends MouseAdapter implements ActionListener {
 //        viewSiswa.setVisible(true);
         viewLogin.resetView();
         viewLogin.showTime();
-        model.inputSiswa("Daffa Haris", "Ipa", 2015);
-        user = model.searchSiswa("S-1");
         viewSiswa.setDate();
-        viewSiswa.setWelcome(user.getNamaSiswa());
-
-        String nama = "Andi";
-        model.inputTentor(nama);
-        nama = "Ani";
-        model.inputTentor(nama);
-
-        String Mapel = "Kalkulus";
-        int bab = 3;
-        int kkm = 95;
-        model.inputMapel(Mapel, bab, kkm);
-        Mapel = "Fisika";
-        bab = 69;
-        kkm = 75;
-        model.inputMapel(Mapel, bab, kkm);
-        Mapel = "Fisika";
-        bab = 69;
-        kkm = 75;
-        model.inputMapel(Mapel, bab, kkm);
-
-        String IdTentor = "T-1";
-        String mapel = "Kalkulus";
-        Tentor t1 = model.searchTentor(IdTentor);
-        MataPelajaran m1 = model.searchMapel(mapel);
-        model.inputKelasToTentor(t1, m1, "K0001");
-
-        IdTentor = "T-1";
-        mapel = "Fisika";
-        t1 = model.searchTentor(IdTentor);
-        m1 = model.searchMapel(mapel);
-        model.inputKelasToTentor(t1, m1, "F0001");
-
-        IdTentor = "T-2";
-        mapel = "Fisika";
-        t1 = model.searchTentor(IdTentor);
-        m1 = model.searchMapel(mapel);
-        model.inputKelasToTentor(t1, m1, "F0002");
-
-        String materi = "Integral Lipat";
-        int jmlBahasan = 2;
-        String kelasSiswa = "F0002";
-        Kelas k2 = model.searchKelas(kelasSiswa);
-        if (k2 != null) {
-            model.inputMateriToKelas(k2, materi, jmlBahasan);
-        }
-
-        materi = "Turunan";
-        jmlBahasan = 4;
-        kelasSiswa = "K0001";
-        k2 = model.searchKelas(kelasSiswa);
-        if (k2 != null) {
-            model.inputMateriToKelas(k2, materi, jmlBahasan);
-        }
-        materi = "Naikan";
-        jmlBahasan = 9;
-        kelasSiswa = "K0001";
-        k2 = model.searchKelas(kelasSiswa);
-        if (k2 != null) {
-            model.inputMateriToKelas(k2, materi, jmlBahasan);
-        }
-        materi = "GLBB";
-        jmlBahasan = 5;
-        kelasSiswa = "F0001";
-        k2 = model.searchKelas(kelasSiswa);
-        if (k2 != null) {
-            model.inputMateriToKelas(k2, materi, jmlBahasan);
-        }
-
-        materi = "GLB";
-        jmlBahasan = 3;
-        kelasSiswa = "F0001";
-        k2 = model.searchKelas(kelasSiswa);
-        if (k2 != null) {
-            model.inputMateriToKelas(k2, materi, jmlBahasan);
-        }
-        resetTaView();
-        resetList();
-        user2 =  model.searchTentor("T-1");
-
     }
 
     public void resetTaView() {
@@ -149,7 +68,10 @@ public class Controller extends MouseAdapter implements ActionListener {
         viewSiswa.setKelasStringView("");
         viewSiswa.setKelasString("");
         viewSiswa.setMateriString("");
-        viewSiswa.setDataPribadi(model.toStringSiswa(user.getId()));
+        if (userSiswa!=null){
+            viewSiswa.setDataPribadi(model.toStringSiswa(userSiswa.getId()));
+        }
+        
 
     }
 
@@ -171,8 +93,11 @@ public class Controller extends MouseAdapter implements ActionListener {
         viewAdmin.setListCreateKelasMapel(model.getKelasListMapel());
         viewAdmin.setListCreateKelasTentor(model.getTentorListId());
         viewSiswa.setListKelas(model.getKelasListId());
-        viewSiswa.setListKelasView(model.getKelasListSiswa(user.getId()));
-        viewSiswa.setListMateri(model.getMapelListSiswa(user.getId()));
+        if (userSiswa!=null){
+            viewSiswa.setListKelasView(model.getKelasListSiswa(userSiswa.getId()));
+            viewSiswa.setListMateri(model.getMapelListSiswa(userSiswa.getId()));
+        }
+        
 
     }
 
@@ -187,18 +112,26 @@ public class Controller extends MouseAdapter implements ActionListener {
         if (button.equals(viewLogin.getBtnLogin())) {
             if (viewLogin.getUsernameLogin().equals("admin") && viewLogin.getPasswordLogin().equals("admin")) {
                 viewAdmin.setVisible(true);
-                viewSiswa.setVisible(true);
-                viewTentor.setVisible(true);
-                viewLogin.resetView();
-            } else if (viewLogin.getUsernameLogin().equals("siswa") && viewLogin.getPasswordLogin().equals("siswa")) {
-                viewSiswa.setVisible(true);
-                viewLogin.resetView();
-            } else if (viewLogin.getUsernameLogin().equals("tentor") && viewLogin.getPasswordLogin().equals("tentor")) {
-                viewTentor.setVisible(true);
+                viewSiswa.setVisible(false);
+                viewTentor.setVisible(false);
                 viewLogin.resetView();
             } else {
+                userSiswa = model.searchSiswa(viewLogin.getUsernameLogin());
+                userTentor = model.searchTentor(viewLogin.getUsernameLogin());
+                if (userSiswa != null && (viewLogin.getPasswordLogin().equals(viewLogin.getUsernameLogin()))) {
+                    viewSiswa.setVisible(true);
+                    viewSiswa.setWelcome(userSiswa.getNamaSiswa());
+                    viewLogin.resetView();
+                    resetTaView();
+                } else if (userTentor != null && (viewLogin.getPasswordLogin().equals(viewLogin.getUsernameLogin()))) {
+                    viewTentor.setVisible(true);
+                    viewLogin.resetView();
+                    resetTaView();
+                } else {
+                System.out.println("SALAH");
                 viewLogin.statusViewSalah();
-            }
+                }
+            } 
         }
 
         ////////////////////// UPDATE ////////////////////
@@ -270,18 +203,18 @@ public class Controller extends MouseAdapter implements ActionListener {
         if (button.equals(viewSiswa.getBtnRegis())) {
             String id = viewSiswa.getSelectedKelas();
             Kelas kelas = model.searchKelas(id);
-            model.inputSiswaToKelas(user, kelas);
+            model.inputSiswaToKelas(userSiswa, kelas);
             viewSiswa.setStatusRegis("*Regisrasi Berhasil");
-            viewSiswa.setListKelasView(model.getKelasListSiswa(user.getId()));
-            viewSiswa.setListMateri(model.getKelasListSiswa(user.getId()));
+            viewSiswa.setListKelasView(model.getKelasListSiswa(userSiswa.getId()));
+            viewSiswa.setListMateri(model.getKelasListSiswa(userSiswa.getId()));
         }
         if (button.equals(viewSiswa.getBtnUpdate())) {
             String nama = viewSiswa.getNama();
             String jurusan = viewSiswa.getJurusan();
             int tahunMasuk = viewSiswa.getTahunMasuk();
-            model.updateSiswa(user.getIdSiswa(), nama, jurusan, tahunMasuk);
-            viewSiswa.setDataPribadi(model.toStringSiswa(user.getId()));
-            viewSiswa.setWelcome(user.getNamaSiswa());
+            model.updateSiswa(userSiswa.getIdSiswa(), nama, jurusan, tahunMasuk);
+            viewSiswa.setDataPribadi(model.toStringSiswa(userSiswa.getId()));
+            viewSiswa.setWelcome(userSiswa.getNamaSiswa());
         }
 
 //---------------------------------------------------TENTOR------------------------------------------------
@@ -299,21 +232,21 @@ public class Controller extends MouseAdapter implements ActionListener {
         } else if (button.equals(viewTentor.getBtnDeleteMateri())) {          ///btn Delete Materi
             model.deleteMateri(viewTentor.getSelectedListKelas_DeleteMateri(), viewTentor.getSelectedListMateri_DeleteMateri());
         } else if (button.equals(viewTentor.getBtnUpdateDataPribadi())) {         ///btn Update Profile
-            model.updateTentorPribadi(user2.getId(), viewTentor.getUpdateProfile_NamaTentor());
-            viewTentor.setDeskripsiUpdateProfile(model.toStringTentor(user2.getId()));
+            model.updateTentorPribadi(userTentor.getId(), viewTentor.getUpdateProfile_NamaTentor());
+            viewTentor.setDeskripsiUpdateProfile(model.toStringTentor(userTentor.getId()));
             viewTentor.resetTf();
         } else if (button.equals(viewTentor.getBtnMenuBuatMtr())) {           ///Menu Buat Materi
-            viewTentor.setListKelas_BuatMateri(model.getKelasTentorListId(user2.getId()));
+            viewTentor.setListKelas_BuatMateri(model.getKelasTentorListId(userTentor.getId()));
         } else if (button.equals(viewTentor.getBtnMenuTampilkanMtr())) {          ///Menu View Materi
-            viewTentor.setListKelas_ViewMateri(model.getKelasTentorListId(user2.getId()));
+            viewTentor.setListKelas_ViewMateri(model.getKelasTentorListId(userTentor.getId()));
         } else if (button.equals(viewTentor.getBtnMenuLihatKelas())) {            ///Menu View Kelas
-            viewTentor.setListKelas_DaftarKelasSiswa(model.getKelasTentorListId(user2.getId()));
+            viewTentor.setListKelas_DaftarKelasSiswa(model.getKelasTentorListId(userTentor.getId()));
         } else if (button.equals(viewTentor.getBtnMenuUbahMtr())) {           /// Menu Update Materi
-            viewTentor.setListKelas_UpdateMateri(model.getKelasTentorListId(user2.getId()));
+            viewTentor.setListKelas_UpdateMateri(model.getKelasTentorListId(userTentor.getId()));
         } else if (button.equals(viewTentor.getBtnMenuHapusMtr())) {          ///Menu Delete Materi
-            viewTentor.setListKelas_DeleteMateri(model.getKelasTentorListId(user2.getId()));
+            viewTentor.setListKelas_DeleteMateri(model.getKelasTentorListId(userTentor.getId()));
         } else if (button.equals(viewTentor.getBtnMenuUbahProfile())) {
-            viewTentor.setDeskripsiUpdateProfile(model.toStringTentor(user2.getId()));
+            viewTentor.setDeskripsiUpdateProfile(model.toStringTentor(userTentor.getId()));
         }
 
     }
