@@ -1780,7 +1780,8 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        this.setVisible(false);
+        btnBackActionPerformed(evt);
+        this.setVisible(false); 
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed

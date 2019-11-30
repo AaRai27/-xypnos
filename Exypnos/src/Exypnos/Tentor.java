@@ -44,5 +44,9 @@ public class Tentor extends Orang {
     public int getListKelasSize() {
         return listKelas.size();
     }
+    
+    public void removeListKelas(Kelas kelas){
+        listKelas.remove(kelas);
+    }
 
 }

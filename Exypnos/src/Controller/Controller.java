@@ -97,6 +97,11 @@ public class Controller extends MouseAdapter implements ActionListener {
             viewSiswa.setListKelasView(model.getKelasListSiswa(userSiswa.getId()));
             viewSiswa.setListMateri(model.getMapelListSiswa(userSiswa.getId()));
         }
+        viewTentor.setListKelas_BuatMateri(model.getKelasTentorListId(userTentor.getId()));
+        viewTentor.setListKelas_DaftarKelasSiswa(model.getKelasTentorListId(userTentor.getId()));
+        viewTentor.setListKelas_DeleteMateri(model.getKelasTentorListId(userTentor.getId()));
+        viewTentor.setListKelas_UpdateMateri(model.getKelasTentorListId(userTentor.getId()));
+        viewTentor.setListKelas_ViewMateri(model.getKelasTentorListId(userTentor.getId()));
         
 
     }
@@ -157,7 +162,7 @@ public class Controller extends MouseAdapter implements ActionListener {
             String mapel = viewAdmin.getTfNamaMapelCreate();
             int bab = viewAdmin.getTfJumlahBabCreate();
             int Kkm = viewAdmin.getTfKkmCreate();
-            model.inputMapel(mapel, Kkm, bab);
+            model.inputMapel(mapel,bab,Kkm);
             viewAdmin.resetTfView();
             resetList();
         }

@@ -300,8 +300,7 @@ public class Aplikasi {
             for (int i = 0; i < daftarTentor.size(); i++) {
                 for (int j = 0; j < daftarTentor.get(i).getListKelasSize(); j++) {
                     if (daftarTentor.get(i).getKelas(j).getNamaKelas().equals(namaKelas)) {
-                        Kelas k2 = daftarTentor.get(i).getKelas(j);
-                        k2 = null;
+                        daftarTentor.get(i).removeListKelas(daftarTentor.get(i).getKelas(j));
                     }
                 }
 
