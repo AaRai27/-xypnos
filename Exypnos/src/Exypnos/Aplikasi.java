@@ -425,7 +425,7 @@ public class Aplikasi {
         if (searchSiswa(id) == null) {
             return "data Siswa tidak ditemukan";
         } else {
-            return "No.ID\t: " + searchSiswa(id).getIdSiswa() + "\nNama\t: " + searchSiswa(id).getNamaSiswa() + "\nJurusan\t: " + searchSiswa(id).getJurusan() + "\nTahun Masuk\t: " + searchSiswa(id).getTahunMasuk();
+            return "\nNo.ID\t: " + searchSiswa(id).getIdSiswa() + "\nNama\t: " + searchSiswa(id).getNamaSiswa() + "\nJurusan\t: " + searchSiswa(id).getJurusan() + "\nTahun Masuk\t: " + searchSiswa(id).getTahunMasuk();
         }
     }
 
@@ -591,7 +591,7 @@ public class Aplikasi {
             text = text + "\n================================";
             text = text + "\nNama Siswa Pada Kelas " + kelas + " : ";
             for (int i = 0; i < searchKelas(kelas).getListSiswaSize(); i++) {
-                text = text + "No.ID\t: " + searchKelas(kelas).getSiswa(i).getIdSiswa() + "\nNama\t: " + searchKelas(kelas).getSiswa(i).getNamaSiswa() + "\nJurusan\t: " + searchKelas(kelas).getSiswa(i).getJurusan() + "\nTahun Masuk\t: " + searchKelas(kelas).getSiswa(i).getTahunMasuk();
+                text = text + "\nNo.ID\t: " + searchKelas(kelas).getSiswa(i).getIdSiswa() + "\nNama\t: " + searchKelas(kelas).getSiswa(i).getNamaSiswa() + "\nJurusan\t: " + searchKelas(kelas).getSiswa(i).getJurusan() + "\nTahun Masuk\t: " + searchKelas(kelas).getSiswa(i).getTahunMasuk();
             }
         }
         return text;

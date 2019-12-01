@@ -847,6 +847,10 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         Utama.repaint();
         Utama.revalidate();
         this.setVisible(false);
+        resetTf();
+        setDeskripsiKelasTentorString("");
+        setDeskripsiViewMateriString("");
+        setDeskripsiUpdateProfile("");
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack1ActionPerformed
@@ -854,6 +858,11 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         Utama.add(Menu);
         Utama.repaint();
         Utama.revalidate();
+        resetTf();
+        setDeskripsiKelasTentorString("");
+        setDeskripsiViewMateriString("");
+        setDeskripsiUpdateProfile("");
+    
     }//GEN-LAST:event_btnBack1ActionPerformed
 
     /**

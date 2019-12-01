@@ -7,6 +7,7 @@ package Controller;
 
 import Exypnos.*;
 import View.*;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -71,7 +72,9 @@ public class Controller extends MouseAdapter implements ActionListener {
         if (userSiswa!=null){
             viewSiswa.setDataPribadi(model.toStringSiswa(userSiswa.getId()));
         }
-        
+        viewTentor.setDeskripsiKelasTentorString("");
+        viewTentor.setDeskripsiViewMateriString("");
+        viewTentor.setDeskripsiUpdateProfile("");
 
     }
 
@@ -116,6 +119,7 @@ public class Controller extends MouseAdapter implements ActionListener {
         ////////Login
         if (button.equals(viewLogin.getBtnLogin())) {
             if (viewLogin.getUsernameLogin().equals("admin") && viewLogin.getPasswordLogin().equals("admin")) {
+                //viewAdmin.add()
                 viewAdmin.setVisible(true);
                 viewSiswa.setVisible(false);
                 viewTentor.setVisible(false);
@@ -234,8 +238,10 @@ public class Controller extends MouseAdapter implements ActionListener {
             int jmlBahasanBaru = viewTentor.getUpdateMateri_jmlBahasanBaru();
             model.updateMateri(viewTentor.getSelectedListKelas_UpdateMateri(), viewTentor.getSelectedListMateri_UpdateMateri(), namaMateriBaru, jmlBahasanBaru);
             viewTentor.resetTf();
+            viewTentor.setListMateri_UpdateMateri(model.getMateriKelasTentorListId(selectedKelasUpdateMtr));
         } else if (button.equals(viewTentor.getBtnDeleteMateri())) {          ///btn Delete Materi
             model.deleteMateri(viewTentor.getSelectedListKelas_DeleteMateri(), viewTentor.getSelectedListMateri_DeleteMateri());
+            viewTentor.setListMateri_DeleteMateri(model.getKelasTentorListId(viewTentor.getSelectedListKelas_DeleteMateri()));
         } else if (button.equals(viewTentor.getBtnUpdateDataPribadi())) {         ///btn Update Profile
             model.updateTentorPribadi(userTentor.getId(), viewTentor.getUpdateProfile_NamaTentor());
             viewTentor.setDeskripsiUpdateProfile(model.toStringTentor(userTentor.getId()));
