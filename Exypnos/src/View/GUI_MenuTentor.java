@@ -34,7 +34,7 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
 
         Latar = new java.awt.Panel();
         panelHeader = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        LabelWelcomTentor = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
         btnBack1 = new javax.swing.JButton();
@@ -124,9 +124,9 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         panelHeader.setBackground(new java.awt.Color(44, 120, 115));
         panelHeader.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(111, 185, 143));
-        jLabel20.setText("Halo Admin");
+        LabelWelcomTentor.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        LabelWelcomTentor.setForeground(new java.awt.Color(111, 185, 143));
+        LabelWelcomTentor.setText("Halo Admin");
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/exypnos1.png"))); // NOI18N
 
@@ -166,7 +166,7 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
             panelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel20)
+                .addComponent(LabelWelcomTentor)
                 .addGap(213, 213, 213)
                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -191,7 +191,7 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
                             .addComponent(btnBack1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelHeaderLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(jLabel20)
+                        .addComponent(LabelWelcomTentor)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -873,6 +873,7 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
     java.awt.Panel Buat_materi;
     java.awt.Panel DaftarKelasSiswa;
     java.awt.Panel DeleteMateri;
+    javax.swing.JLabel LabelWelcomTentor;
     java.awt.Panel Latar;
     javax.swing.JList<String> ListKelas_BuatMateri;
     javax.swing.JList<String> ListKelas_DaftarKelasSiswa;
@@ -909,7 +910,6 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
     javax.swing.JLabel jLabel17;
     javax.swing.JLabel jLabel18;
     javax.swing.JLabel jLabel19;
-    javax.swing.JLabel jLabel20;
     javax.swing.JLabel jLabel21;
     javax.swing.JLabel jLabel3;
     javax.swing.JLabel jLabel4;
@@ -1007,6 +1007,10 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
 
     public void setDeskripsiKelasTentorString(String s) {
         taDeskripsiKelasTentor.setText(s);
+    }
+    
+    public void setLabelWelcome(String s){
+        LabelWelcomTentor.setText(s);
     }
 ///////////BUAT MATERI
 

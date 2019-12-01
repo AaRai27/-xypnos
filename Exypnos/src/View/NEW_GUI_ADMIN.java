@@ -1176,6 +1176,11 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
 
         btnUpdateKelasUpdate.setText("UPDATE");
         btnUpdateKelasUpdate.setToolTipText("");
+        btnUpdateKelasUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateKelasUpdateActionPerformed(evt);
+            }
+        });
 
         labelStatusUpdateKelas.setForeground(new java.awt.Color(255, 255, 0));
         labelStatusUpdateKelas.setText("STATUS UPDATE");
@@ -1904,6 +1909,16 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteKelasActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        setTaDeleteKelasDeskripsiKelasString("");
+        setTaDeleteMapelDeksripsiMapel("");
+        setTaDeskripsiKelasString("");
+        setTaDeskripsiMapelCreateString("");
+        setTaDeskripsiMapelUpdateString("");
+        setTaViewKelasDeskripsiKelasString("");
+        setTaViewMapelDeskripsiMapelString("");
+        setTaViewSiswaDetailSiswaString("");
+        setTaViewSiswaKelasTentorDeskripsiKelasString("");
+        setTaViewTentorDetailTentorString("");
         panelMoveLayout.removeAll();
         panelMoveLayout.add(panelMainMenu);
         panelMoveLayout.repaint();
@@ -1961,6 +1976,10 @@ public class NEW_GUI_ADMIN extends javax.swing.JFrame {
         panelMoveLayout.repaint();
         panelMoveLayout.revalidate();
     }//GEN-LAST:event_btnCreateSiswaActionPerformed
+
+    private void btnUpdateKelasUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateKelasUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateKelasUpdateActionPerformed
 
     public void resetTfView(){
         tfJumlahBabCreate.setText("");

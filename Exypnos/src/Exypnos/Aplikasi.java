@@ -608,5 +608,19 @@ public class Aplikasi {
         }
         return listId;
     }
+    
+    public String toStringTentorKelasSiswa(String namaKelas){
+        String text= "";
+        for (int i = 0; i < daftarTentor.size(); i++) {
+            for (int j = 0; j < daftarTentor.get(i).getListKelasSize(); j++) {
+                if(daftarTentor.get(i).getKelas(j).getNamaKelas().equals(namaKelas)){
+                    text = "No.ID\t: " +daftarTentor.get(i).getId()  + "\nNama\t: " + daftarTentor.get(i).getNama();
+                    text = text +"\n"+ toStringkelasFull(daftarTentor.get(i).getKelas(j).getNamaKelas());
+                    
+                }    
+            }
+        }
+        return text;
+    }
 
 }
