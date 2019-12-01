@@ -79,33 +79,29 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         taDeskripsiViewMateri = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         UpdateMateri = new java.awt.Panel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        ListKelas_UpdateMateri = new javax.swing.JList<>();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        ListMateri_UpdateMateri = new javax.swing.JList<>();
-        jLabel8 = new javax.swing.JLabel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        taDeskripsiUpdateMateri = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         tfUpdateMateri_NamaMateriBaru = new javax.swing.JTextField();
         tfUpdateMateri_jmlBahasanBaru = new javax.swing.JTextField();
         btnUpdateMateri = new javax.swing.JButton();
+        panel1 = new java.awt.Panel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        ListMateri_UpdateMateri = new javax.swing.JList<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        ListKelas_UpdateMateri = new javax.swing.JList<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         DeleteMateri = new java.awt.Panel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        panel2 = new java.awt.Panel();
         jScrollPane10 = new javax.swing.JScrollPane();
         ListKelas_DeleteMateri = new javax.swing.JList<>();
         jScrollPane11 = new javax.swing.JScrollPane();
         ListMateri_DeleteMateri = new javax.swing.JList<>();
-        jLabel14 = new javax.swing.JLabel();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        taDeskripsiDeleteMateri = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         btnDeleteMateri = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
         UpdateDataTentor = new java.awt.Panel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -343,6 +339,8 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
 
         Utama.add(DaftarKelasSiswa, "card3");
 
+        Buat_materi.setBackground(new java.awt.Color(44, 120, 115));
+
         label3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         label3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         label3.setText("Nama Materi");
@@ -444,7 +442,10 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
 
         Utama.add(Buat_materi, "card4");
 
-        label6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        TampilkanMateri.setBackground(new java.awt.Color(44, 120, 115));
+
+        label6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        label6.setForeground(new java.awt.Color(111, 185, 143));
         label6.setText("Tampilkan Materi");
 
         label8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -466,66 +467,54 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         TampilkanMateriLayout.setHorizontalGroup(
             TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TampilkanMateriLayout.createSequentialGroup()
+                .addGap(0, 144, Short.MAX_VALUE)
                 .addGroup(TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TampilkanMateriLayout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TampilkanMateriLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TampilkanMateriLayout.createSequentialGroup()
                         .addGroup(TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(TampilkanMateriLayout.createSequentialGroup()
-                                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(52, 52, 52)
-                                .addComponent(jLabel5))
+                                .addGap(26, 26, 26)
+                                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(TampilkanMateriLayout.createSequentialGroup()
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(83, 83, 83)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(220, Short.MAX_VALUE))
+                                .addGap(149, 149, 149)
+                                .addComponent(jLabel5)))
+                        .addGap(104, 104, 104))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TampilkanMateriLayout.createSequentialGroup()
+                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(285, 285, 285))))
         );
         TampilkanMateriLayout.setVerticalGroup(
             TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TampilkanMateriLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TampilkanMateriLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TampilkanMateriLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)))
-                .addGroup(TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TampilkanMateriLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(TampilkanMateriLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addGroup(TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TampilkanMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         Utama.add(TampilkanMateri, "card5");
 
-        jLabel6.setText("Daftar Kelas");
+        UpdateMateri.setBackground(new java.awt.Color(44, 120, 115));
 
-        jLabel7.setText("Daftar Materi");
-
-        jScrollPane7.setViewportView(ListKelas_UpdateMateri);
-
-        jScrollPane8.setViewportView(ListMateri_UpdateMateri);
-
-        jLabel8.setText("Deskripsi");
-
-        taDeskripsiUpdateMateri.setColumns(20);
-        taDeskripsiUpdateMateri.setRows(5);
-        jScrollPane9.setViewportView(taDeskripsiUpdateMateri);
-
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(111, 185, 143));
         jLabel9.setText("Update Materi");
 
-        jLabel10.setText("Nama Materi");
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setText("Nama Materi Baru");
 
-        jLabel11.setText("Jumlah Bahasan");
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setText("Jumlah Bahasan Baru");
 
         tfUpdateMateri_NamaMateriBaru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -535,74 +524,105 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
 
         btnUpdateMateri.setText("Update");
 
+        panel1.setBackground(new java.awt.Color(111, 185, 143));
+
+        jScrollPane8.setViewportView(ListMateri_UpdateMateri);
+
+        jScrollPane7.setViewportView(ListKelas_UpdateMateri);
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setText("Daftar Materi");
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("Daftar Kelas");
+
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+                        .addGap(24, 24, 24))))
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout UpdateMateriLayout = new javax.swing.GroupLayout(UpdateMateri);
         UpdateMateri.setLayout(UpdateMateriLayout);
         UpdateMateriLayout.setHorizontalGroup(
             UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UpdateMateriLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateMateriLayout.createSequentialGroup()
+                .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, UpdateMateriLayout.createSequentialGroup()
                         .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(35, 35, 35)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10))
+                        .addGap(56, 56, 56)
                         .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfUpdateMateri_NamaMateriBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfUpdateMateri_jmlBahasanBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateMateriLayout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(152, 152, 152))))
+                            .addGroup(UpdateMateriLayout.createSequentialGroup()
+                                .addComponent(tfUpdateMateri_NamaMateriBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(UpdateMateriLayout.createSequentialGroup()
+                                .addComponent(tfUpdateMateri_jmlBahasanBaru, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnUpdateMateri)
+                                .addGap(12, 12, 12)))))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateMateriLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnUpdateMateri)
-                .addContainerGap())
+                .addComponent(jLabel9)
+                .addGap(306, 306, 306))
         );
         UpdateMateriLayout.setVerticalGroup(
             UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UpdateMateriLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addGap(29, 29, 29)
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                    .addComponent(jLabel10)
+                    .addComponent(tfUpdateMateri_NamaMateriBaru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(UpdateMateriLayout.createSequentialGroup()
-                        .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(tfUpdateMateri_NamaMateriBaru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(tfUpdateMateri_jmlBahasanBaru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                .addComponent(btnUpdateMateri)
-                .addGap(88, 88, 88))
+                .addGroup(UpdateMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tfUpdateMateri_jmlBahasanBaru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdateMateri))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Utama.add(UpdateMateri, "card6");
 
-        jLabel12.setText("Daftar Kelas");
+        DeleteMateri.setBackground(new java.awt.Color(44, 120, 115));
 
-        jLabel13.setText("Daftar Materi");
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel15.setText("Delete Materi");
+
+        panel2.setBackground(new java.awt.Color(111, 185, 143));
 
         ListKelas_DeleteMateri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jScrollPane10.setViewportView(ListKelas_DeleteMateri);
@@ -610,74 +630,84 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         ListMateri_DeleteMateri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jScrollPane11.setViewportView(ListMateri_DeleteMateri);
 
-        jLabel14.setText("Deskripsi");
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setText("Daftar Materi");
 
-        taDeskripsiDeleteMateri.setColumns(20);
-        taDeskripsiDeleteMateri.setRows(5);
-        taDeskripsiDeleteMateri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jScrollPane12.setViewportView(taDeskripsiDeleteMateri);
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setText("Daftar Kelas");
 
         btnDeleteMateri.setText("Delete");
 
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel15.setText("Delete Materi");
+        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
+        panel2.setLayout(panel2Layout);
+        panel2Layout.setHorizontalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnDeleteMateri)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addGap(105, 105, 105)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel2Layout.setVerticalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDeleteMateri)
+                        .addContainerGap())))
+        );
 
         javax.swing.GroupLayout DeleteMateriLayout = new javax.swing.GroupLayout(DeleteMateri);
         DeleteMateri.setLayout(DeleteMateriLayout);
         DeleteMateriLayout.setHorizontalGroup(
             DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeleteMateriLayout.createSequentialGroup()
-                .addGroup(DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(DeleteMateriLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDeleteMateri))
-                    .addGroup(DeleteMateriLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(95, 95, 95)
-                        .addGroup(DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
-                        .addGroup(DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(26, 26, 26))
             .addGroup(DeleteMateriLayout.createSequentialGroup()
-                .addGap(285, 285, 285)
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DeleteMateriLayout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(DeleteMateriLayout.createSequentialGroup()
+                        .addGap(316, 316, 316)
+                        .addComponent(jLabel15)))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         DeleteMateriLayout.setVerticalGroup(
             DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DeleteMateriLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addComponent(jLabel15)
-                .addGap(65, 65, 65)
-                .addGroup(DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(DeleteMateriLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DeleteMateriLayout.createSequentialGroup()
-                        .addGroup(DeleteMateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addComponent(btnDeleteMateri)
-                .addGap(30, 30, 30))
+                .addGap(27, 27, 27)
+                .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         Utama.add(DeleteMateri, "card6");
 
+        UpdateDataTentor.setBackground(new java.awt.Color(44, 120, 115));
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Data Pribadi");
 
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setText("Update Data Pribadi");
 
         taDeskripsiUpdateProfile.setColumns(20);
@@ -685,6 +715,7 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         taDeskripsiUpdateProfile.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jScrollPane13.setViewportView(taDeskripsiUpdateProfile);
 
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setText("Nama Baru Tentor");
 
         tfUpdateProfile_NamaTentor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.black, null, null));
@@ -696,58 +727,55 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
             }
         });
 
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel19.setText("Update Profile");
 
         javax.swing.GroupLayout UpdateDataTentorLayout = new javax.swing.GroupLayout(UpdateDataTentor);
         UpdateDataTentor.setLayout(UpdateDataTentorLayout);
         UpdateDataTentorLayout.setHorizontalGroup(
             UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateDataTentorLayout.createSequentialGroup()
+            .addGroup(UpdateDataTentorLayout.createSequentialGroup()
                 .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(UpdateDataTentorLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(320, 320, 320)
+                        .addComponent(jLabel19))
                     .addGroup(UpdateDataTentorLayout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
-                .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateDataTentorLayout.createSequentialGroup()
-                        .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnUpdateDataPribadi)
-                            .addComponent(tfUpdateProfile_NamaTentor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(74, 74, 74))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateDataTentorLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
                         .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(90, 90, 90))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateDataTentorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addGap(276, 276, 276))
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(UpdateDataTentorLayout.createSequentialGroup()
+                                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnUpdateDataPribadi)
+                                        .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tfUpdateProfile_NamaTentor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         UpdateDataTentorLayout.setVerticalGroup(
             UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UpdateDataTentorLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap()
                 .addComponent(jLabel19)
-                .addGap(58, 58, 58)
+                .addGap(47, 47, 47)
                 .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(UpdateDataTentorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(UpdateDataTentorLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(UpdateDataTentorLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfUpdateProfile_NamaTentor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnUpdateDataPribadi))
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(162, Short.MAX_VALUE))
+                        .addComponent(btnUpdateDataPribadi)))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         Utama.add(UpdateDataTentor, "card8");
@@ -904,7 +932,6 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
     javax.swing.JLabel jLabel11;
     javax.swing.JLabel jLabel12;
     javax.swing.JLabel jLabel13;
-    javax.swing.JLabel jLabel14;
     javax.swing.JLabel jLabel15;
     javax.swing.JLabel jLabel16;
     javax.swing.JLabel jLabel17;
@@ -916,13 +943,11 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
     javax.swing.JLabel jLabel5;
     javax.swing.JLabel jLabel6;
     javax.swing.JLabel jLabel7;
-    javax.swing.JLabel jLabel8;
     javax.swing.JLabel jLabel9;
     javax.swing.JList<String> jList2;
     javax.swing.JScrollPane jScrollPane1;
     javax.swing.JScrollPane jScrollPane10;
     javax.swing.JScrollPane jScrollPane11;
-    javax.swing.JScrollPane jScrollPane12;
     javax.swing.JScrollPane jScrollPane13;
     javax.swing.JScrollPane jScrollPane2;
     javax.swing.JScrollPane jScrollPane3;
@@ -931,7 +956,6 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
     javax.swing.JScrollPane jScrollPane6;
     javax.swing.JScrollPane jScrollPane7;
     javax.swing.JScrollPane jScrollPane8;
-    javax.swing.JScrollPane jScrollPane9;
     java.awt.Label label10;
     java.awt.Label label3;
     java.awt.Label label4;
@@ -942,10 +966,10 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
     java.awt.Label label9;
     java.awt.List list1;
     java.awt.List list2;
+    java.awt.Panel panel1;
+    java.awt.Panel panel2;
     javax.swing.JPanel panelHeader;
-    javax.swing.JTextArea taDeskripsiDeleteMateri;
     javax.swing.JTextArea taDeskripsiKelasTentor;
-    javax.swing.JTextArea taDeskripsiUpdateMateri;
     javax.swing.JTextArea taDeskripsiUpdateProfile;
     javax.swing.JTextArea taDeskripsiViewMateri;
     javax.swing.JTextField tfBuatMateri_JmlBahasan;
@@ -1105,9 +1129,7 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         return ListMateri_UpdateMateri.getSelectedValue();
     }
 
-    public void setDeskripsiUpdateMateriString(String s) {
-        taDeskripsiUpdateMateri.setText(s);
-    }
+    
 
     public String getUpdateMateri_NamaMateriBaru() {
         return tfUpdateMateri_NamaMateriBaru.getText();
@@ -1146,9 +1168,7 @@ public class GUI_MenuTentor extends javax.swing.JFrame {
         return ListMateri_DeleteMateri.getSelectedValue();
     }
 
-    public void setDeskripsiDeleteMateri(String s) {
-        taDeskripsiDeleteMateri.setText(s);
-    }
+ 
 
     public JButton getBtnDeleteMateri() {
         return btnDeleteMateri;

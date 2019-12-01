@@ -41,7 +41,6 @@ public class GUI_Login extends javax.swing.JFrame {
         labelStatus = new javax.swing.JLabel();
         tfPasswordLogin = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
-        btnRegister = new javax.swing.JButton();
         panelRegister = new javax.swing.JPanel();
         rbSiswa = new javax.swing.JRadioButton();
         rbTentor = new javax.swing.JRadioButton();
@@ -99,13 +98,6 @@ public class GUI_Login extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(44, 120, 115));
         jLabel1.setText("LOGIN");
 
-        btnRegister.setText("REGISTER");
-        btnRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegisterActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelLoginLayout = new javax.swing.GroupLayout(panelLogin);
         panelLogin.setLayout(panelLoginLayout);
         panelLoginLayout.setHorizontalGroup(
@@ -122,9 +114,7 @@ public class GUI_Login extends javax.swing.JFrame {
                             .addComponent(tfUsernameLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelLoginLayout.createSequentialGroup()
                         .addGap(268, 268, 268)
-                        .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelLoginLayout.createSequentialGroup()
                         .addGap(253, 253, 253)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -153,9 +143,7 @@ public class GUI_Login extends javax.swing.JFrame {
                 .addComponent(tfPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
             .addGroup(panelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelLoginLayout.createSequentialGroup()
                     .addContainerGap(586, Short.MAX_VALUE)
@@ -347,13 +335,6 @@ public class GUI_Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        panelMain.removeAll();
-        panelMain.add(panelRegister);
-        panelMain.repaint();
-        panelMain.revalidate();
-    }//GEN-LAST:event_btnRegisterActionPerformed
-
     private void rbSiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSiswaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbSiswaActionPerformed
@@ -410,7 +391,6 @@ public class GUI_Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnRegister;
     private javax.swing.JButton btnToLogin;
     private javax.swing.JButton btnToRegister;
     private javax.swing.JLabel jLabel1;
